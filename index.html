@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Styling for the header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #ccc;
+        }
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header-button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .header-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styling for the text and image below the header */
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+        .main-title {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: left;
+        }
+        .main-title .line {
+            display: block;
+        }
+        .main-image {
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">JOANNA CAI</div>
+        <button class="header-button">Click Me</button>
+    </header>
+    <div class="main-content">
+        <div class="main-title">
+            <span class="line">JOANNA</span>
+            <span class="line">CAI</span>
+        </div>
+        <img class="main-image" src="your-image-url.jpg" alt="Description of image">
+    </div>
+</body>
+</html>
