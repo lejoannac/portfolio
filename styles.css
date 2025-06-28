@@ -1,0 +1,48 @@
+body {
+    font-family: 'Neue Haas Grotesk Display Pro', Arial, Helvetica, sans-serif;
+}
+/* Styling for the header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.header-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.header-button:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the text and image below the header */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.main-title {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: left;
+}
+.main-title .line {
+    display: block;
+}
+.main-image {
+    max-width: 300px;
+    height: auto;
+}
