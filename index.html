@@ -8,11 +8,12 @@
 </head>
 <body>
     <header>
-        <div class="header-title">JOANNA CAI</div>
+        <a class="header-title" href="index.html">JOANNA</a>
         <div class="header-buttons">
-            <button class="header-button">Projects</button>
-            <button class="header-button">About</button>
-            <button class="header-button">Contact</button>
+            <button class="header-button" id="projects-scroll-btn">Projects</button>
+            <a class="header-button" href="index.html#about">About</a>
+            <a class="header-button" href="index.html#contact">Contact</a>
+            <button class="header-button" onclick="toggleDarkMode()">Dark</button>
         </div>
     </header>
     <div class="main-content">
@@ -21,11 +22,41 @@
             <span class="line">CAI</span>
         </div>
         <div class="main-right">
-            <img class="main-image" src="pfp.jpeg" alt="Description of image">
+            <div class="profile-photo-container">
+                <img class="main-image" src="assets/pfp.jpeg" alt="Joanna Cai profile photo">
+                <!-- grad.svg will be layered as background in CSS -->
+            </div>
         </div>
     </div>
     <div class="main-intro">
-        Hi! I'm an incoming first year engineering student hoping to specialize in mechatronics . I work with hydraulics, soft robotics, and designs tailored to neurodivergent individuals — based in Vancouver. Let’s create!
+        Hi! I'm an incoming first year engineering student hoping to specialize in mechatronics . I work with hydraulics, soft robotics, and designs tailored to neurodivergent individuals — based in Vancouver. Let's create!
+        <div class="main-buttons">
+            <button class="aboutm-button">About Me</button>
+            <button class="discover-button" id="discover-scroll-btn">Discover My Work</button>
+        </div>
     </div>
+
+    <!-- Begin Projects Section -->
+    <main>
+        <div class="projects-header">
+            <h1 class="projects-title">work.</h1>
+            <a class="show-more-btn" href="projects.html">Show More</a>
+        </div>
+        <div class="projects-grid">
+            <div class="project-square"><img src="assets/melokey.png" alt="Project 1"></div>
+            <div class="project-square"><img src="assets/blipyboard.png" alt="Project 2"></div>
+            <div class="project-square"><img src="assets/web.png" alt="Project 3"></div>
+            <div class="project-square"><img src="assets/wip.jpg" alt="wip"></div>
+        </div>
+    </main>
+    <!-- Projects Section -->
+
+    <!-- LinkedIn SVG Icon Centered at Bottom -->
+    <div class="linkedin-footer">
+        <a href="https://www.linkedin.com/in/joanna-cai-45b383249/" target="_blank" aria-label="LinkedIn">
+            <img src="assets/linkedin.svg" alt="LinkedIn" class="linkedin-icon" />
+        </a>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
