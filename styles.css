@@ -81,7 +81,7 @@ header {
     max-width: 500px;
 }
 .main-intro {
-    font-size: 20px;
+    font-size: 35px;
     font-weight: 400;
     color: rgba(0,0,0,0.7);
     margin-top: 0;
@@ -189,6 +189,7 @@ header {
     margin-bottom: 20px;
     margin-left: 40px; /* Matches the grid's padding for perfect alignment */
     margin-right: 40px; /* Add right margin to prevent button from going off screen */
+    margin-top: 64px; /* Add spacing above the "work." section */
 }
 
 .projects-title {
@@ -211,7 +212,8 @@ header {
 }
 .project-square {
     background: #f4f4f4;
-    border-radius: 12px;
+    border: 1.5px solid #bfc9d1; /* Thin border */
+    border-radius: 14px;         /* Slightly more rounded corners */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -219,8 +221,8 @@ header {
     aspect-ratio: 1 / 1;
     width: 100%; /* Let the grid control the size */
     height: auto; /* Height will be determined by aspect-ratio */
-    min-width: 150px; /* Smaller minimum for mobile */
-    max-width: none; /* Remove max-width to allow bigger squares */
+    min-width: 150px;
+    max-width: none;
 }
 .project-square img {
     width: 100%;
@@ -277,4 +279,12 @@ header {
     height: 30px;
     display: block;
     filter: invert(10%) sepia(100%) saturate(2000%) hue-rotate(200deg) brightness(70%);
+}
+.about-intro {
+    font-size: 35px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.7);
+    margin-top: 0;
+    line-height: 1.3;
+    margin-right: 40%;
 }
