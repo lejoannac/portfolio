@@ -10,10 +10,12 @@
     <header>
         <a class="header-title" href="index.html">JOANNA</a>
         <div class="header-buttons">
-            <button class="header-button" id="projects-scroll-btn">Projects</button>
+            <a class="header-button" id="projects-header-btn" href="index.html#work">Projects</a>
             <a class="header-button" href="index.html#about">About</a>
-            <a class="header-button" href="index.html#contact">Contact</a>
-            <button class="header-button" onclick="toggleDarkMode()">Dark</button>
+            <a class="header-button" href="contact.html">Contact</a>
+            <button class="header-button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+                <img src="assets/dark.svg" alt="Dark Mode" style="width:22px; height:22px; display:inline-block; vertical-align:middle;">
+            </button>
         </div>
     </header>
     <div class="main-content">
@@ -37,7 +39,7 @@
     </div>
 
     <!-- Begin Projects Section -->
-    <main>
+    <main id="work">
         <div class="projects-header">
             <h1 class="projects-title">work.</h1>
             <a class="show-more-btn" href="projects.html">Show More</a>
@@ -52,21 +54,48 @@
     <!-- Projects Section -->
 
     <!-- About Me Section -->
-    <section class="about-section">
-        <h1 class="projects-title">about.</h1>
-        <!-- Add your about me content here -->
-        <div class="about-intro">
-        I'm curious about the world of how mechatronics intersect with inclusive design and interativity.
+    <section class="about-section" id="about">
+        <h1 class="about-title">about.</h1>
+        <div class="about-content">
+            <div class="about-intro">
+                I'm curious about the world of how mechatronics intersect with inclusive design and interativity.
+            </div>
+            <div class="about-image-section">
+                <img class="about-image" src="assets/about-photo.jpg" alt="About Me Photo">
+            <div class="about-paragraph">
+                <p>
+                    I'm Joanna Cai, a graduating senior from John Oliver Secondary, born and raised in Vancouver B.C. I hope to improve accessibility for inclusive learning around the globe radically. With my specialized skillset I'm working towards building a new world of interactive installations to Canada. <br>
+                    <span style="display:block; height: 12px;"></span>
+                    In 2024, I interned with Nokia, learning the basics of pytest and schemathesis with Nokia's notifier API in a corporate setting. <br>
+                    <span style="display:block; height: 12px;"></span>
+                    Combining my passions of music, engineering, and a curiosity for neurodiversity advocacy, I created Melokey.
+                </p>
+                <div class="main-buttons">
+                <button class="cv-button">Download CV</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Light Blue Section -->
+    <section class="lightblue-section">
+        <h2>Let's Innovate Something Extraordinary!</h2>
         <div class="main-buttons">
-            <button class="cv-button">Download CV</button>
-    </div>
+            <button class="contact-button">Get in Touch</button>
+        </div>
     </section>
 
     <!-- LinkedIn SVG Icon Centered at Bottom -->
     <div class="linkedin-footer">
-        <a href="https://www.linkedin.com/in/joanna-cai-45b383249/" target="_blank" aria-label="LinkedIn">
-            <img src="assets/linkedin.svg" alt="LinkedIn" class="linkedin-icon" />
-        </a>
+    <a href="https://www.linkedin.com/in/joanna-cai-45b383249/" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="linkedin-icon">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+    </a>
+    <a href="mailto:jxcai534@email.com" target="_blank" aria-label="Email" class="email-footer-link">
+        <img src="assets/email.svg" alt="Email" class="email-icon" />
+    </a>
     </div>
     <script src="app.js"></script>
 </body>
