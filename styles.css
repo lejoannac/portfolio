@@ -9,13 +9,10 @@ header {
     padding: 10px 20px;
     background-color: #f4f4f4;
     border-bottom: 1px solid #ccc;
-    width: 100vw;         /* Make header span the full viewport width */
+    width: 100%;         /* Fix: use 100% instead of 100vw */
     box-sizing: border-box;
     position: relative;   /* Ensure it stays in normal flow */
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    z-index: 1001;        /* Ensure header is above mobile menu */
 }
 .header-title {
     color: #000;
@@ -57,6 +54,107 @@ header {
     background-color: #e0e0e0;
 }
 
+/* Hamburger menu styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    gap: 4px;
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    margin-top: -4px; /* Shift up to align with header */
+}
+
+.hamburger-line {
+    width: 28px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    border-radius: 2px;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    right: 0;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+    z-index: 1000;
+    flex-direction: column;
+    gap: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Remove debug border and min-height */
+}
+
+.mobile-menu.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-item {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 0;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.mobile-menu-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu-item:hover {
+    background-color: #e0e0e0;
+}
+
+/* Dark mode styles for hamburger menu */
+body.dark-mode .hamburger-line {
+    background-color: #e6f0ff;
+}
+
+body.dark-mode .mobile-menu {
+    background-color: #142447;
+    border-bottom-color: #223366;
+}
+
+body.dark-mode .mobile-menu-item {
+    color: #e6f0ff;
+    border-bottom-color: #223366;
+}
+
+body.dark-mode .mobile-menu-item:hover {
+    background-color: #223366;
+}
+
 /* Styling for the text and image below the header */
 .main-content {
     display: flex;
@@ -69,6 +167,9 @@ header {
     font-size: 160px;
     font-weight: bold;
     text-align: left;
+    min-width: 420px; /* Reserve space for animated text, adjust as needed */
+    width: 420px;
+    box-sizing: border-box;
 }
 .main-title .line {
     display: block;
@@ -79,6 +180,7 @@ header {
     align-items: flex-start;
     gap: 24px;
     max-width: 500px;
+    margin-left: 48px; /* Shift profile picture right */
 }
 .main-intro {
     font-size: 35px;
@@ -90,15 +192,14 @@ header {
 }
 .profile-photo-container {
     position: relative;
-    width: 600px;
-    height: 500px; /* Increased to fit SVG below image */
+    width: 650px;
+    height: 520px; /* Increased to fit SVG below image */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* grad.svg as background, adjust size/position as needed */
-    background: url('assets/grad.svg') no-repeat center bottom;
-    background-size: 950px 530px; /* Adjust as needed for your SVG */
+    background: url('assets/grad.svg') no-repeat 20% bottom;
+    background-size: 600px 530px; /* Adjust as needed for your SVG */
 }
 .main-image {
     width: 250px;
@@ -107,7 +208,8 @@ header {
     object-fit: cover;
     position: relative;
     z-index: 1;
-    margin-top: 24px; /* Add spacing above the image */
+    margin-top: 24px;
+    margin-left: 120px; /* Add spacing above the image */
 }
 
 /* Styling for the About M button */
@@ -742,6 +844,17 @@ body.dark-mode .button-icon {
     .main-title {
         font-size: 80px;
     }
+    
+    /* Show hamburger menu and hide regular header buttons on mobile */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    .header-buttons {
+        display: none;
+    }
+    
+    /* Don't override mobile-menu display here - let JavaScript control it */
 }
 
 .contact-page .main-content {
@@ -757,14 +870,14 @@ body.dark-mode .button-icon {
         gap: 40px;
     }
     .main-title {
-        text-align: left;
-        width: 100%;
-        margin-bottom: 0;
+        margin-left: 80px;
     }
+    
     .main-right {
         width: 100%;
         max-width: 100%;
         justify-content: center;
+        margin-left: 0; /* Reset for mobile */
     }
     .profile-photo-container {
         margin-top: 0;
@@ -774,6 +887,8 @@ body.dark-mode .button-icon {
         height: auto;
         background: none; /* Remove background image on small screens */
         position: relative;
+        right: 40px;
+        
     }
     .profile-photo-container::after {
         content: "";
@@ -790,12 +905,9 @@ body.dark-mode .button-icon {
         display: block;
     }
     .main-image {
-        width: 100%;
-        max-width: 220px;
-        height: auto;
-        margin-top: 0;
-        position: relative;
-        z-index: 1;
+        width: 180px;
+        height: 180px;
+        margin-left: 0;
     }
 }
 
@@ -836,6 +948,8 @@ body.dark-mode .button-icon {
     .main-intro {
         margin-left: 0;
         text-align: left;
+    }
+}
 
 .typing-cursor {
     animation: blink 1s infinite;
@@ -846,3 +960,34 @@ body.dark-mode .button-icon {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
 }
+
+.contact-page .main-title .line {
+    display: inline !important;
+}
+
+.contact-title {
+    font-size: 120px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 0.5em;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+.contact-title-line {
+    display: block;
+}
+@media (max-width: 900px) {
+    .contact-title {
+        font-size: 60px;
+        padding-right: 24px;
+        box-sizing: border-box;
+        word-break: break-word;
+    }
+}
+
+.form-container,
+.contact-form {
+    padding-right: 11px;
+    box-sizing: border-box;
+}
+

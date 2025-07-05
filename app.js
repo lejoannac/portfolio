@@ -40,6 +40,36 @@ function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
 }
 
+function toggleMobileMenu() {
+    console.log('toggleMobileMenu called!');
+    const hamburger = document.querySelector('.hamburger-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    console.log('Hamburger element:', hamburger);
+    console.log('Mobile menu element:', mobileMenu);
+    
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    
+    console.log('Hamburger classes:', hamburger.classList.toString());
+    console.log('Mobile menu classes:', mobileMenu.classList.toString());
+}
+
+// Close mobile menu when clicking on a menu item
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+    
+    mobileMenuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+    });
+});
+
 function typeWriterWithCursor(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
@@ -62,21 +92,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const line1 = document.querySelector('.main-title .line:first-child');
     const line2 = document.querySelector('.main-title .line:last-child');
     
-    // Hide both lines initially
-    line1.style.opacity = '0';
-    line2.style.opacity = '0';
-    
-    // Type "JOANNA" first
-    setTimeout(() => {
-        line1.style.opacity = '1';
-        typeWriterWithCursor(line1, 'JOANNA', 150);
-    }, 500);
-    
-    // Type "CAI" after first line is done
-    setTimeout(() => {
-        line2.style.opacity = '1';
-        typeWriterWithCursor(line2, 'CAI', 150);
-    }, 2000);
+    // Only run typing animation if we're on the main page (not contact page)
+    if (line1 && line2 && !document.body.classList.contains('contact-page')) {
+        // Hide both lines initially
+        line1.style.opacity = '0';
+        line2.style.opacity = '0';
+        
+        // Type "JOANNA" first
+        setTimeout(() => {
+            line1.style.opacity = '1';
+            typeWriterWithCursor(line1, 'JOANNA', 150);
+        }, 500);
+        
+        // Type "CAI" after first line is done
+        setTimeout(() => {
+            line2.style.opacity = '1';
+            typeWriterWithCursor(line2, 'CAI', 150);
+        }, 2000);
+    }
 });
 
 // Add this to your app.js file
@@ -98,21 +131,28 @@ function showCopyPopup() {
     // Create popup element
     const popup = document.createElement('div');
     popup.innerHTML = '✓ Email copied to clipboard!';
+    
+    // Check if dark mode is active
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    
     popup.style.cssText = `
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: #4CAF50;
-        color: white;
-        padding: 16px 24px;
-        border-radius: 8px;
+        background: ${isDarkMode ? 'rgba(34, 51, 102, 0.9)' : 'rgba(0, 31, 77, 0.9)'};
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 6px;
         font-size: 14px;
         font-weight: 500;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+        box-shadow: 0 4px 16px rgba(0, 31, 77, 0.3);
         z-index: 1000;
         opacity: 0;
         transition: opacity 0.3s ease;
+        border: 2px solid ${isDarkMode ? 'rgba(34, 51, 102, 0.8)' : 'rgba(0, 31, 77, 0.8)'};
+        backdrop-filter: blur(8px);
     `;
     
     document.body.appendChild(popup);
