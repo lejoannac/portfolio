@@ -211,24 +211,83 @@ header {
     box-sizing: border-box;
 }
 .project-square {
+    position: relative; /* Needed for overlay positioning */
     background: #f4f4f4;
-    border: 1.5px solid #bfc9d1; /* Thin border */
-    border-radius: 14px;         /* Slightly more rounded corners */
+    border: 1.5px solid #bfc9d1;
+    border-radius: 14px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     aspect-ratio: 1 / 1;
-    width: 100%; /* Let the grid control the size */
-    height: auto; /* Height will be determined by aspect-ratio */
+    width: 100%;
+    height: auto;
     min-width: 150px;
     max-width: none;
 }
+
+.project-square::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(100, 100, 100, 0.25); /* semi-transparent grey */
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    border-radius: 14px;
+}
+
+.project-square:hover::after {
+    opacity: 1;
+}
+
 .project-square img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.project-info-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(40, 40, 40, 0.92);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 0;
+    padding: 32px 24px 24px 24px;
+    transition: opacity 0.2s;
+    z-index: 2;
+    border-radius: 14px;
+    pointer-events: none;
+}
+
+.project-square:hover .project-info-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-info-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.project-info-desc {
+    font-size: 1rem;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.project-info-tags {
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.85;
+    display: flex;
+    gap: 12px;
 }
 
 .show-more-btn {
@@ -347,7 +406,7 @@ header {
 .lightblue-section {
     background: #e6f0ff;
     padding: 48px 40px;
-    margin-top: 48px;
+    margin-top: 96px; /* Increased top margin for more space above the title */
     border-radius: 16px;
     color: #001f4d;
 }
@@ -585,6 +644,94 @@ body.dark-mode .submit-btn:hover {
     background: #0a1833;
 }
 
+.cv-button,
+.contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    min-width: 140px;
+    padding: 0 16px;
+    font-size: 15px;
+    font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: #001f4d;
+    color: #fff;
+    border-color: #001f4d;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    margin: 0;
+    text-decoration: none; /* Remove underline */
+}
+
+.cv-button:hover,
+.contact-button:hover {
+    background: #003366;
+    color: #fff;
+    border-color: #003366;
+}
+
+body.dark-mode .cv-button,
+body.dark-mode .contact-button {
+    background: #223366;
+    color: #e6f0ff;
+    border-color: #223366;
+}
+
+body.dark-mode .cv-button:hover,
+body.dark-mode .contact-button:hover {
+    background: #0a1833;
+    color: #fff;
+    border-color: #0a1833;
+}
+
+.button-icon {
+    width: 40px;           /* Make it bigger */
+    height: 40px;     /* Shift it left */
+    display: inline-block;
+    vertical-align: middle; /* Add some space between icon and text */
+    filter: invert(18%) sepia(60%) saturate(2000%) hue-rotate(200deg) brightness(70%);
+}
+
+body.dark-mode .button-icon {
+    filter: invert(90%) sepia(10%) saturate(500%) hue-rotate(180deg) brightness(90%);
+}
+
+.icon-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.icon-row a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.linkedin-icon,
+.email-icon,
+.button-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+    filter: invert(18%) sepia(60%) saturate(2000%) hue-rotate(200deg) brightness(70%);
+    transition: filter 0.2s;
+}
+
+body.dark-mode .linkedin-icon,
+body.dark-mode .email-icon,
+body.dark-mode .button-icon {
+    filter: invert(90%) sepia(10%) saturate(500%) hue-rotate(180deg) brightness(90%);
+}
+
 @media (max-width: 768px) {
     .contact-email-row {
         flex-direction: column;
@@ -602,3 +749,90 @@ body.dark-mode .submit-btn:hover {
     margin: 20px 0 0 0;
     gap: 0;
 }
+
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .main-title {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .main-right {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+    }
+    .profile-photo-container {
+        margin-top: 0;
+        width: 100%;
+        max-width: 220px;
+        margin-left: 200px;
+        height: auto;
+        background: none; /* Remove background image on small screens */
+        position: relative;
+    }
+    .profile-photo-container::after {
+        content: "";
+        position: absolute;
+        left: 60%;
+        transform: translateX(-50%);
+        bottom: -100px; /* Shift SVG further down */
+        width: 800px;
+        height: 200px;
+        background: url('assets/grad.svg') no-repeat center bottom;
+        background-size: contain;
+        z-index: 0;
+        pointer-events: none;
+        display: block;
+    }
+    .main-image {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-image-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    .about-image {
+        margin-top: 0;
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+    .about-paragraph {
+        margin-left: 0;
+        max-width: 100%;
+        text-align: left;
+    }
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding: 0 0 0 0;
+        width: 100%;
+    }
+    .project-square {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: unset;
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .main-intro {
+        margin-left: 0;
+        text-align: left;

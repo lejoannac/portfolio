@@ -45,9 +45,36 @@
             <a class="show-more-btn" href="projects.html">Show More</a>
         </div>
         <div class="projects-grid">
-            <div class="project-square"><img src="assets/melokey.png" alt="Project 1"></div>
-            <div class="project-square"><img src="assets/blipyboard.png" alt="Project 2"></div>
-            <div class="project-square"><img src="assets/web.png" alt="Project 3"></div>
+            <div class="project-square">
+                <img src="assets/melokey.png" alt="Project 1">
+                <div class="project-info-overlay">
+                    <div class="project-info-title">melokey.</div>
+                    <div class="project-info-desc">
+                        An electronic (MIDI) keyboard designed with the purpose of educating neurodivergent students and providing them with a pathway to music production
+                    </div>
+                    <div class="project-info-tags">KiCad Fusion360 Swift</div>
+                </div>
+            </div>
+            <div class="project-square">
+                <img src="assets/blipyboard.png" alt="Project 2">
+                <div class="project-info-overlay">
+                    <div class="project-info-title">blipyboard</div>
+                    <div class="project-info-desc">
+                        An 8 key macropad with an OLED screen and potentiometer. It also has 8 SK6812 leds for lighting and utilizes custom KMK firmware.
+                    </div>
+                    <div class="project-info-tags">KiCad Fusion360 Python</div>
+                </div>
+            </div>
+            <div class="project-square">
+                <img src="assets/web.png" alt="Project 3">
+                <div class="project-info-overlay">
+                    <div class="project-info-title">personal portfolio</div>
+                    <div class="project-info-desc">
+                        A personal portfolio website hosted by GitHub. Includes Front and Backend with features such as Dark/Light mode switching, contact page, and smooth scrolling.
+                    </div>
+                    <div class="project-info-tags">HTML CSS Javascript</div>
+                </div>
+            </div>
             <div class="project-square"><img src="assets/wip.jpg" alt="wip"></div>
         </div>
     </main>
@@ -71,7 +98,9 @@
                     Combining my passions of music, engineering, and a curiosity for neurodiversity advocacy, I created Melokey.
                 </p>
                 <div class="main-buttons">
-                <button class="cv-button">Download CV</button>
+                    <a class="cv-button" href="assets/JoannaCaiResume.docx.pdf" target="_blank" rel="noopener">
+                        Download CV
+                    </a>
                 </div>
             </div>
             </div>
@@ -82,21 +111,24 @@
     <section class="lightblue-section">
         <h2>Let's Innovate Something Extraordinary!</h2>
         <div class="main-buttons">
-            <button class="contact-button">Get in Touch</button>
+            <a class="contact-button" href="contact.html">
+                Get in Touch
+            </a>
+        </div>
+        <div class="icon-row">
+            <a href="https://www.linkedin.com/in/joanna-cai-45b383249/" target="_blank" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="linkedin-icon">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+            <a href="mailto:jxcai534@email.com" target="_blank" aria-label="Email" class="email-footer-link">
+                <img src="assets/email.svg" alt="Email" class="email-icon" />
+            </a>
+            <a href="https://github.com/lejoannac" target="_blank" aria-label="GitHub" class="github-footer-link">
+                <img src="assets/github.svg" alt="GitHub" class="button-icon" />
+            </a>
         </div>
     </section>
-
-    <!-- LinkedIn SVG Icon Centered at Bottom -->
-    <div class="linkedin-footer">
-    <a href="https://www.linkedin.com/in/joanna-cai-45b383249/" target="_blank" aria-label="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="linkedin-icon">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-        </svg>
-    </a>
-    <a href="mailto:jxcai534@email.com" target="_blank" aria-label="Email" class="email-footer-link">
-        <img src="assets/email.svg" alt="Email" class="email-icon" />
-    </a>
-    </div>
     <script src="app.js"></script>
 </body>
 </html>
