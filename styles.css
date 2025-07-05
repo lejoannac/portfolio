@@ -836,3 +836,13 @@ body.dark-mode .button-icon {
     .main-intro {
         margin-left: 0;
         text-align: left;
+
+.typing-cursor {
+    animation: blink 1s infinite;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
