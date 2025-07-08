@@ -842,7 +842,7 @@ body.dark-mode .button-icon {
     }
     
     .main-title {
-        font-size: 80px;
+        font-size: 90px;
     }
     
     /* Show hamburger menu and hide regular header buttons on mobile */
@@ -870,7 +870,7 @@ body.dark-mode .button-icon {
         gap: 40px;
     }
     .main-title {
-        margin-left: 80px;
+        margin-left: 60px;
     }
     
     .main-right {

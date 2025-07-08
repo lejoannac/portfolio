@@ -34,6 +34,24 @@ document.addEventListener('DOMContentLoaded', function() {
             // (no need to preventDefault)
         });
     }
+
+    // Only run on contact page
+    if (document.querySelector('.contact-title')) {
+        const line1 = document.getElementById('contact-line-1');
+        const line2 = document.getElementById('contact-line-2');
+        if (line1 && line2) {
+            line1.style.opacity = '0';
+            line2.style.opacity = '0';
+            setTimeout(() => {
+                line1.style.opacity = '1';
+                typeWriterWithCursor(line1, 'SHOOT A', 120);
+            }, 300);
+            setTimeout(() => {
+                line2.style.opacity = '1';
+                typeWriterWithCursor(line2, 'MESSAGE', 120);
+            }, 1800);
+        }
+    }
 });
 
 function toggleDarkMode() {
