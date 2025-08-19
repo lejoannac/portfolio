@@ -107,26 +107,30 @@ function typeWriterWithCursor(element, text, speed = 100) {
 
 // Initialize the typing effect
 document.addEventListener('DOMContentLoaded', function() {
-    const line1 = document.querySelector('.main-title .line:first-child');
-    const line2 = document.querySelector('.main-title .line:last-child');
-    
-    // Only run typing animation if we're on the main page (not contact page)
-    if (line1 && line2 && !document.body.classList.contains('contact-page')) {
-        // Hide both lines initially
+    if (document.body.classList.contains('contact-page')) return;
+
+    const lines = document.querySelectorAll('.main-title .line');
+    if (lines.length >= 2) {
+        const line1 = lines[0];
+        const line2 = lines[lines.length - 1];
         line1.style.opacity = '0';
         line2.style.opacity = '0';
-        
-        // Type "JOANNA" first
         setTimeout(() => {
             line1.style.opacity = '1';
             typeWriterWithCursor(line1, 'JOANNA', 150);
         }, 500);
-        
-        // Type "CAI" after first line is done
         setTimeout(() => {
             line2.style.opacity = '1';
             typeWriterWithCursor(line2, 'CAI', 150);
         }, 2000);
+    } else if (lines.length === 1) {
+        const line = lines[0];
+        const text = (line.textContent || '').trim();
+        line.style.opacity = '0';
+        setTimeout(() => {
+            line.style.opacity = '1';
+            typeWriterWithCursor(line, text, 120);
+        }, 500);
     }
 });
 

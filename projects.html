@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects – Joanna Cai</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a class="header-title" href="index.html">JOANNA</a>
+        <div class="header-buttons">
+            <a class="header-button" href="projects.html">Projects</a>
+            <a class="header-button" href="index.html#about">About</a>
+            <a class="header-button" href="contact.html">Contact</a>
+            <button class="header-button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+                <img src="assets/dark.svg" alt="Dark Mode" style="width:22px; height:22px; display:inline-block; vertical-align:middle;">
+            </button>
+        </div>
+        <button class="hamburger-menu" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </header>
+    <div class="mobile-menu">
+        <a class="mobile-menu-item" href="projects.html">Projects</a>
+        <a class="mobile-menu-item" href="index.html#about">About</a>
+        <a class="mobile-menu-item" href="contact.html">Contact</a>
+        <button class="mobile-menu-item" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+    <main>
+        <div class="main-title">
+            <span class="line">PROJECTS</span>
+        </div>
+        
+        <!-- Project 1: Melokey (Picture Left) -->
+        <div class="project-row">
+            <div class="project-image">
+                <img src="assets/melokey.png" alt="Melokey Project">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">melokey.</h2>
+                <p class="project-description">
+                    An electronic (MIDI) keyboard designed with the purpose of educating neurodivergent students and providing them with a pathway to music production. This project combines hardware design, software development, and accessibility considerations to create an inclusive learning tool.
+                </p>
+                <div class="project-tags">KiCad • Fusion360 • Swift</div>
+                <a href="https://github.com/lejoannac/melokey" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
+            </div>
+        </div>
+
+        <!-- Project 2: Blipyboard (Picture Right) -->
+        <div class="project-row">
+            <div class="project-content">
+                <h2 class="project-title">blipyboard</h2>
+                <p class="project-description">
+                    An 8 key macropad with an OLED screen and potentiometer. It also has 8 SK6812 leds for lighting and utilizes custom KMK firmware. This project demonstrates embedded systems design and custom firmware development.
+                </p>
+                <div class="project-tags">KiCad • Fusion360 • Python</div>
+                <a href="https://github.com/lejoannac/blipyboard" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
+            </div>
+            <div class="project-image">
+                <img src="assets/blipyboard.png" alt="Blipyboard Project">
+            </div>
+        </div>
+
+        <!-- Project 3: Personal Portfolio (Picture Left) -->
+        <div class="project-row">
+            <div class="project-image">
+                <img src="assets/web.png" alt="Personal Portfolio Project">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">personal portfolio</h2>
+                <p class="project-description">
+                    A personal portfolio website hosted by GitHub. Includes Front and Backend with features such as Dark/Light mode switching, contact page, and smooth scrolling. Built with modern web technologies and responsive design principles.
+                </p>
+                <div class="project-tags">HTML • CSS • JavaScript</div>
+                <a href="https://github.com/lejoannac/portfolio" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
+            </div>
+        </div>
+
+        <!-- Project 4: WIP (Picture Right) -->
+        <div class="project-row">
+            <div class="project-content">
+                <h2 class="project-title">work in progress</h2>
+                <p class="project-description">
+                    A new project currently under development. More details coming soon as this project evolves and takes shape.
+                </p>
+                <div class="project-tags">Coming Soon</div>
+            </div>
+            <div class="project-image">
+                <img src="assets/wip.jpg" alt="Work in Progress">
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

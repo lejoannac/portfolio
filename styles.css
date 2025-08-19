@@ -1,5 +1,7 @@
 body {
     font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 /* Styling for the header */
 header {
@@ -164,7 +166,7 @@ body.dark-mode .mobile-menu-item:hover {
     gap: 40px;
 }
 .main-title {
-    font-size: 160px;
+    font-size: clamp(56px, 18vw, 160px);
     font-weight: bold;
     text-align: left;
     min-width: 420px; /* Reserve space for animated text, adjust as needed */
@@ -307,11 +309,19 @@ body.dark-mode .mobile-menu-item:hover {
     grid-template-rows: 1fr 1fr;
     gap: 2vw 2vw; /* Explicit x and y gap - should be the same */
     padding: 2vw; /* Responsive padding */
-    width: calc(100vw - 8vw); /* Take up more screen width */
+    width: calc(100% - 8vw); /* Take up more screen width */
     max-width: none; /* Remove max-width restriction */
     margin: 40px auto 0 auto;
     box-sizing: border-box;
 }
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .project-square {
     position: relative; /* Needed for overlay positioning */
     background: #f4f4f4;
@@ -326,6 +336,13 @@ body.dark-mode .mobile-menu-item:hover {
     height: auto;
     min-width: 150px;
     max-width: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-square:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .project-square::after {
@@ -418,7 +435,7 @@ body.dark-mode .mobile-menu-item:hover {
 
 /* linkedin stuff */
 .linkedin-footer {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -476,13 +493,9 @@ body.dark-mode .mobile-menu-item:hover {
 }
 
 .about-image {
-    width: 530px;
-    height: 370px;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    flex-shrink: 0;
-    margin-top: 48px; /* Increase this value until the image aligns with the paragraph top */
+    width: 100%;
+    max-width: 350px;
+    height: auto;
 }
 
 .about-intro {
@@ -494,15 +507,9 @@ body.dark-mode .mobile-menu-item:hover {
    
 }
 
-
 .about-paragraph {
-    flex: 1;
-    font-size: 18px;
-    font-weight: 400;
-    color: rgba(0,0,0,0.8);
-    line-height: 1.6;
-    max-width: 450px; 
-    margin-left: auto;
+    font-size: 16px;
+    max-width: 100%;
 }
 
 .lightblue-section {
@@ -843,6 +850,10 @@ body.dark-mode .button-icon {
     
     .main-title {
         font-size: 90px;
+        width: 100%;
+        min-width: 0;
+        text-align: center;
+        margin: 0 auto;
     }
     
     /* Show hamburger menu and hide regular header buttons on mobile */
@@ -868,9 +879,13 @@ body.dark-mode .button-icon {
         flex-direction: column;
         align-items: center;
         gap: 40px;
+        margin: 0;
     }
     .main-title {
-        margin-left: 60px;
+        margin-left: 0;
+        width: 100%;
+        min-width: 0;
+        text-align: center;
     }
     
     .main-right {
@@ -880,23 +895,24 @@ body.dark-mode .button-icon {
         margin-left: 0; /* Reset for mobile */
     }
     .profile-photo-container {
-        margin-top: 0;
+        margin-top: -40px;
         width: 100%;
         max-width: 220px;
-        margin-left: 200px;
+        margin-left: 180px;
         height: auto;
         background: none; /* Remove background image on small screens */
         position: relative;
-        right: 40px;
+        right: 0;
         
     }
     .profile-photo-container::after {
         content: "";
         position: absolute;
-        left: 60%;
+        left: 50%;
         transform: translateX(-50%);
         bottom: -100px; /* Shift SVG further down */
-        width: 800px;
+        width: 100%;
+        max-width: 800px;
         height: 200px;
         background: url('assets/grad.svg') no-repeat center bottom;
         background-size: contain;
@@ -908,6 +924,16 @@ body.dark-mode .button-icon {
         width: 180px;
         height: 180px;
         margin-left: 0;
+    }
+}
+
+/* On small screens, align the index (JOANNA CAI) title to the left */
+@media (max-width: 900px) {
+    .main-content .main-title {
+        text-align: left;
+        margin: 0 0 40px 0;
+        width: 100%;
+        min-width: 0;
     }
 }
 
@@ -941,6 +967,54 @@ body.dark-mode .button-icon {
         max-width: 100%;
         aspect-ratio: unset;
         height: auto;
+    }
+    
+    /* Project page mobile styles */
+    .main-title {
+        font-size: clamp(44px, 14vw, 90px);
+        text-align: center;
+        width: 100%;
+        min-width: 0;
+        margin: 0 auto 40px auto;
+    }
+    
+    .project-row {
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 60px;
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    .project-row.reverse {
+        flex-direction: column;
+    }
+    
+    .project-image {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+        order: -1; /* This ensures image appears first on mobile */
+    }
+    
+    .project-content {
+        max-width: 100%;
+        order: 1; /* This ensures content appears after image */
+    }
+    
+    .project-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .project-description {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .project-tags {
+        text-align: center;
     }
 }
 
@@ -989,5 +1063,134 @@ body.dark-mode .button-icon {
 .contact-form {
     padding-right: 11px;
     box-sizing: border-box;
+}
+
+/* Project page specific styles */
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+    padding: 0 40px;
+}
+
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+    padding: 0 40px;
+    justify-content: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-image {
+    flex: 0 0 400px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.project-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    color: #001f4d;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0 0 24px 0;
+}
+
+.project-tags {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.project-github-link {
+    display: inline-block;
+    background: #001f4d;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.project-github-link:hover {
+    background: #003366;
+}
+
+/* Dark mode styles for project page */
+body.dark-mode .project-title {
+    color: #e6f0ff;
+}
+
+body.dark-mode .project-description {
+    color: rgba(230, 240, 255, 0.8);
+}
+
+body.dark-mode .project-tags {
+    color: #bfc9d1;
+}
+
+body.dark-mode .project-github-link {
+    background: #223366;
+}
+
+body.dark-mode .project-github-link:hover {
+    background: #0a1833;
+}
+
+/* Medium screens */
+@media (min-width: 900px) {
+    .about-image {
+        max-width: 530px;
+    }
+    .about-paragraph {
+        font-size: 18px;
+        max-width: 450px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .about-image {
+        max-width: 700px;
+    }
+    .about-paragraph {
+        font-size: 22px;
+        max-width: 600px;
+    }
 }
 
