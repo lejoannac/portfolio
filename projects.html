@@ -29,69 +29,137 @@
         <a class="mobile-menu-item" href="contact.html">Contact</a>
         <button class="mobile-menu-item" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </div>
-    <main>
-        <div class="main-title">
-            <span class="line">PROJECTS</span>
-        </div>
-        
-        <!-- Project 1: Melokey (Picture Left) -->
-        <div class="project-row">
-            <div class="project-image">
-                <img src="assets/melokey.png" alt="Melokey Project">
-            </div>
-            <div class="project-content">
-                <h2 class="project-title">melokey.</h2>
-                <p class="project-description">
-                    An electronic (MIDI) keyboard designed with the purpose of educating neurodivergent students and providing them with a pathway to music production. This project combines hardware design, software development, and accessibility considerations to create an inclusive learning tool.
-                </p>
-                <div class="project-tags">KiCad • Fusion360 • Swift</div>
-                <a href="https://github.com/lejoannac/melokey" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
-            </div>
-        </div>
+    <main class="projects-page">
+        <aside class="projects-sidebar" aria-label="Project directory">
+            <nav>
+                <ul>
+                    <li><a href="#linear-potentiometer-mounts">Linear Potentiometer Mounts</a></li>
+                    <li><a href="#linear-gripper">Linear Gripper</a></li>
+                    <li><a href="#melokey">melokey.</a></li>
+                    <li><a href="#blipyboard">blipyboard</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-        <!-- Project 2: Blipyboard (Picture Right) -->
-        <div class="project-row">
-            <div class="project-content">
-                <h2 class="project-title">blipyboard</h2>
-                <p class="project-description">
-                    An 8 key macropad with an OLED screen and potentiometer. It also has 8 SK6812 leds for lighting and utilizes custom KMK firmware. This project demonstrates embedded systems design and custom firmware development.
-                </p>
-                <div class="project-tags">KiCad • Fusion360 • Python</div>
-                <a href="https://github.com/lejoannac/blipyboard" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
+        <section class="projects-content">
+            <div class="main-title">
+                <span class="line">PROJECTS</span>
             </div>
-            <div class="project-image">
-                <img src="assets/blipyboard.png" alt="Blipyboard Project">
-            </div>
-        </div>
 
-        <!-- Project 3: Personal Portfolio (Picture Left) -->
-        <div class="project-row">
-            <div class="project-image">
-                <img src="assets/web.png" alt="Personal Portfolio Project">
-            </div>
-            <div class="project-content">
-                <h2 class="project-title">personal portfolio</h2>
-                <p class="project-description">
-                    A personal portfolio website hosted by GitHub. Includes Front and Backend with features such as Dark/Light mode switching, contact page, and smooth scrolling. Built with modern web technologies and responsive design principles.
-                </p>
-                <div class="project-tags">HTML • CSS • JavaScript</div>
-                <a href="https://github.com/lejoannac/portfolio" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
-            </div>
-        </div>
+            <!-- Case Study: Linear Potentiometer Shock Mounts -->
+            <section id="linear-potentiometer-mounts" class="project-row case-study">
+                <div class="project-image">
+                    <img src="assets/shockpot.png" alt="Linear Potentiometer Mounts">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Linear Potentiometer Shock Mounts (UBC Baja SAE)</h2>
 
-        <!-- Project 4: WIP (Picture Right) -->
-        <div class="project-row">
-            <div class="project-content">
-                <h2 class="project-title">work in progress</h2>
-                <p class="project-description">
-                    A new project currently under development. More details coming soon as this project evolves and takes shape.
-                </p>
-                <div class="project-tags">Coming Soon</div>
+                    <h3>Overview</h3>
+                    <p>Designed and manufactured waterjet-cut mounting hardware to integrate linear potentiometers into the Baja SAE suspension system for shock travel data acquisition. Enabled reliable suspension travel measurement under off-road vibration and debris exposure.</p>
+
+                    <h3>Problem</h3>
+                    <p>Our 2025 competition Baja car, Mochi, requires accurate shock travel data for suspension tuning and validation. Off-the-shelf mounting solutions were unsuitable due to tight packaging, suspension geometry, and high vibration. Sensor alignment, durability, and serviceability were critical to prevent sensor damage or noisy data.</p>
+
+                    <h3>Design Constraints</h3>
+                    <ul>
+                        <li>Maintain linear alignment with shock motion throughout suspension travel</li>
+                        <li>Withstand off-road vibration, impacts, and debris</li>
+                        <li>Manufacturable in-house using waterjet cutting and basic shop tools</li>
+                        <li>Integrate cleanly with existing suspension and CAN-based DAQ system</li>
+                    </ul>
+
+                    <h3>My Role</h3>
+                    <ul>
+                        <li>Mechanical design of sensor mounts in SolidWorks</li>
+                        <li>Iterative CAD refinement based on suspension geometry and travel limits</li>
+                        <li>Collaboration with electrical teammates integrating CAN data acquisition with STM32 Cube IDE</li>
+                    </ul>
+
+                    <h3>Solution</h3>
+                    <p>Designed waterjet-cut aluminum mounting brackets tailored to the suspension geometry. Incorporated rigid mounting features to maintain potentiometer alignment during dynamic motion and optimized the design for in-house fabrication, drilling, and tapping.</p>
+
+                    <h3>Manufacturing &amp; Assembly</h3>
+                    <p>Waterjet cut brackets in-house, drilled, tapped, and assembled mounts using standard shop tools, then welded and aligned potentiometers on the vehicle suspension.</p>
+
+                    <h3>Outcome / Impact</h3>
+                    <p>Successfully enabled collection of shock travel data through CAN for data acquisition. Improved suspension tuning capability and data reliability during testing and provided a durable, serviceable mounting solution for repeated off-road use.</p>
+
+                    <div class="project-tags">Solidworks • STM32 • C • Shop Skills</div>
+                    <p style="margin-top:12px;">
+                        <a href="assets/Linear%20Potentiometer%20Mount%20Design%20Review.pdf" download class="cv-button" rel="noopener" target="_blank">Download Design Review Slides (PDF)</a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Case Study: Linear Gripper -->
+            <section id="linear-gripper" class="project-row case-study">
+                <div class="project-image">
+                    <img src="assets/gripper.png" alt="Linear Gripper">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Linear Gripper for Chemistry Automation</h2>
+
+                    <h3>Overview</h3>
+                    <p>Designed a modular linear gripper in SolidWorks for a chemistry automation robot at the PRIME Robotics Lab (under Dr. Chao Liu). Intended to handle laboratory tools such as test tubes and scoopulas with controlled, repeatable motion. CAD model developed for rapid 3D-printed prototyping, with a planned transition to a machined version for long-term use.</p>
+
+                    <h3>Problem</h3>
+                    <p>Automated chemistry experiments require precise handling of small, fragile, and varied lab tools. Off-the-shelf grippers lacked the adaptability and form factor required for test tubes and scoopulas. The research platform required a compact, modular end-effector suitable for iterative experimentation.</p>
+
+                    <h3>Design Goals &amp; Constraints</h3>
+                    <ul>
+                        <li>Accommodate both cylindrical (test tubes) and flat/irregular (scoopulas) geometries</li>
+                        <li>Apply sufficient gripping force without damaging glassware</li>
+                        <li>Support rubberized gripping surfaces for improved friction and compliance</li>
+                        <li>Suitable for rapid prototyping via 3D printing, followed by machining</li>
+                        <li>Maintain a compact and modular geometry compatible with a research robot</li>
+                    </ul>
+
+                    <h3>My Role</h3>
+                    <ul>
+                        <li>Mechanical design and CAD modeling of the linear gripper in SolidWorks</li>
+                        <li>Iterative refinement based on lab requirements and tool geometries</li>
+                        <li>Design for manufacturability across prototyping and final fabrication stages</li>
+                    </ul>
+
+                    <h3>Solution</h3>
+                    <p>Designed a parallel-jaw linear gripper optimized for consistent, repeatable motion. Shaped jaw geometry to support rubber grip pads, improving friction and compliance when handling delicate tools. Structured the design to allow quick iteration during 3D-printed prototyping before transitioning to a machined version.</p>
+
+                    <h3>Prototyping &amp; Manufacturing Plan</h3>
+                    <p>Initial prototype to be fabricated using 3D printing for rapid testing and iteration. Final version to be machined for improved durability, precision, and repeatability. Design allows for jaw replacement or modification to support additional lab tools.</p>
+
+                    <h3>Outcome / Research Impact</h3>
+                    <p>Delivered a functional gripper design ready for prototyping and experimental integration. Enables the chemistry automation platform to manipulate test tubes and scoopulas reliably and contributes a reusable, modular end-effector to ongoing research in robotic manipulation and lab automation.</p>
+
+                    <div class="project-tags">Solidworks • Research</div>
+                </div>
+            </section>
+
+            <!-- Project: Melokey -->
+            <div id="melokey" class="project-row">
+                <div class="project-image">
+                    <img src="assets/melokey.png" alt="Melokey Project">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">melokey.</h2>
+                    <p class="project-description">An electronic (MIDI) keyboard designed with the purpose of educating neurodivergent students and providing them with a pathway to music production. This project combines hardware design, software development, and accessibility considerations to create an inclusive learning tool.</p>
+                    <div class="project-tags">KiCad • Fusion360 • Swift</div>
+                    <a href="https://github.com/lejoannac/melokey" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
+                </div>
             </div>
-            <div class="project-image">
-                <img src="assets/wip.jpg" alt="Work in Progress">
+
+            <!-- Project: Blipyboard -->
+            <div id="blipyboard" class="project-row">
+                <div class="project-image">
+                    <img src="assets/blipyboard.png" alt="Blipyboard Project">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">blipyboard</h2>
+                    <p class="project-description">An 8 key macropad with an OLED screen and potentiometer. It also has 8 SK6812 leds for lighting and utilizes custom KMK firmware. This project demonstrates embedded systems design and custom firmware development.</p>
+                    <div class="project-tags">KiCad • Fusion360 • Python</div>
+                    <a href="https://github.com/lejoannac/blipyboard" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
     <script src="app.js"></script>
 </body>
