@@ -13,8 +13,8 @@ header {
     border-bottom: 1px solid #ccc;
     width: 100%;         /* Fix: use 100% instead of 100vw */
     box-sizing: border-box;
-    position: relative;   /* Ensure it stays in normal flow */
-    z-index: 1001;        /* Ensure header is above mobile menu */
+    position: static;   /* Let header scroll with the page */
+    z-index: 1001;        /* Ensure header is above mobile menu if needed */
 }
 .header-title {
     color: #000;
@@ -843,7 +843,7 @@ body.dark-mode .contact-button:hover {
 .project-row {
     display: flex;
     gap: 28px;
-    align-items: center;
+    align-items: flex-start; /* align images to the top of each project row */
 }
 .project-image img {
     width: 420px;
@@ -904,6 +904,36 @@ body.dark-mode .contact-button:hover {
 }
 .case-study .project-image img {
     max-width: 480px;
+}
+
+/* Gallery for project images */
+.project-image {
+    width: 420px;
+    flex: 0 0 420px;
+}
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.project-gallery figure {
+    margin: 0;
+}
+.project-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.project-gallery figcaption {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .project-image { width: 100%; flex: none; }
 }
 
 .button-icon {
@@ -1176,7 +1206,7 @@ body.dark-mode .button-icon {
 /* Project page specific styles */
 .project-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 60px;
     margin-bottom: 80px;
     padding: 0 40px;
@@ -1278,6 +1308,48 @@ body.dark-mode .project-github-link {
 
 body.dark-mode .project-github-link:hover {
     background: #0a1833;
+}
+
+/* Case-study gallery overrides so multiple images stack and remain visible */
+.project-row.case-study .project-image {
+    height: auto;
+    overflow: visible;
+    flex: 0 0 420px;
+}
+.project-row.case-study .project-image img {
+    height: auto;
+    object-fit: contain;
+}
+.project-row.case-study .project-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Tighter gallery layout for case studies: reduce image column width
+   and cap individual image heights so text column has more room. */
+.project-row.case-study .project-image {
+    flex: 0 0 300px; /* narrower left column */
+}
+.project-row.case-study .project-content {
+    max-width: 720px; /* allow more space for text */
+}
+.project-row.case-study .project-gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 140px; /* cap most images so they don't dominate layout */
+}
+/* Make the first photo a bit larger but still bounded */
+.project-row.case-study .project-gallery figure:first-child img {
+    max-height: 220px;
+}
+/* Previously hid the first caption for case studies; show captions consistently now */
+.project-row.case-study .project-gallery figure:first-child figcaption {
+    display: block;
+}
+.project-row.case-study .project-gallery figcaption {
+    font-size: 0.9rem;
+    color: rgba(0,0,0,0.6);
 }
 
 /* Medium screens */
