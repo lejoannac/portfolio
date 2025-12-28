@@ -56,6 +56,16 @@ header {
     background-color: #e0e0e0;
 }
 
+/* Ensure header icons can be inverted for dark mode (keeps SVGs visible) */
+.header-button img {
+    filter: none;
+    transition: filter 0.2s ease;
+}
+
+body.dark-mode .header-button img {
+    filter: invert(1) brightness(1.6);
+}
+
 /* Hamburger menu styles */
 .hamburger-menu {
     display: none;
@@ -618,6 +628,55 @@ body.dark-mode .discover-button {
     border-color: #e6f0ff;
 }
 
+/* Image modal / lightbox */
+.image-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 24px;
+}
+.image-modal-content {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+.image-modal-content img {
+    display: block;
+    max-width: calc(100vw - 80px);
+    max-height: calc(100vh - 80px);
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.image-modal-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #fff;
+    color: #111;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.image-modal-close:hover { transform: scale(1.04); }
+
+body.dark-mode .image-modal-close {
+    background: #142447;
+    color: #e6f0ff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
 body.dark-mode .discover-button:hover {
     background: #223366;
     color: #fff;
@@ -755,11 +814,11 @@ body.dark-mode .submit-btn:hover {
 
 .cv-button,
 .contact-button {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     height: 48px;
-    min-width: 140px;
+    min-width: 0;
     padding: 0 16px;
     font-size: 15px;
     font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;

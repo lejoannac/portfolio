@@ -54,8 +54,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+function setDarkMode(enabled) {
+    if (enabled) {
+        document.body.classList.add('dark-mode');
+        try { localStorage.setItem('darkMode', 'true'); } catch(e) {}
+    } else {
+        document.body.classList.remove('dark-mode');
+        try { localStorage.setItem('darkMode', 'false'); } catch(e) {}
+    }
+}
+
 function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
+    const enabled = document.body.classList.contains('dark-mode');
+    setDarkMode(!enabled);
 }
 
 function toggleMobileMenu() {
@@ -134,6 +145,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Initialize dark mode from saved preference
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const darkPref = localStorage.getItem('darkMode');
+        if (darkPref === 'true') setDarkMode(true);
+    } catch (e) {
+        // ignore
+    }
+});
+
 // Add this to your app.js file
 
 function copyEmail() {
@@ -204,3 +225,61 @@ function fallbackCopyText(text) {
     document.execCommand('copy');
     document.body.removeChild(textArea);
 }
+
+// Image modal/lightbox functionality
+function openImageModal(src, alt) {
+    // prevent multiple overlays
+    if (document.querySelector('.image-modal-overlay')) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'image-modal-overlay';
+
+    const content = document.createElement('div');
+    content.className = 'image-modal-content';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'image-modal-close';
+    closeBtn.setAttribute('aria-label', 'Close image');
+    closeBtn.innerText = '✕';
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = alt || '';
+
+    content.appendChild(closeBtn);
+    content.appendChild(img);
+    overlay.appendChild(content);
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    function keyHandler(e) {
+        if (e.key === 'Escape') closeImageModal();
+    }
+
+    overlay._keyHandler = keyHandler;
+    document.addEventListener('keydown', keyHandler);
+
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeImageModal();
+    });
+    closeBtn.addEventListener('click', closeImageModal);
+}
+
+function closeImageModal() {
+    const overlay = document.querySelector('.image-modal-overlay');
+    if (!overlay) return;
+    if (overlay._keyHandler) document.removeEventListener('keydown', overlay._keyHandler);
+    overlay.remove();
+    document.body.style.overflow = '';
+}
+
+// Attach click handlers to project images
+document.addEventListener('DOMContentLoaded', function() {
+    const selectors = document.querySelectorAll('.project-gallery img, .project-image img');
+    selectors.forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function() {
+            openImageModal(img.src, img.alt || '');
+        });
+    });
+});
