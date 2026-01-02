@@ -628,6 +628,25 @@ body.dark-mode .discover-button {
     border-color: #e6f0ff;
 }
 
+/* Improve contrast for project headings and captions in dark mode */
+body.dark-mode .project-title {
+    color: #e6f0ff;
+}
+body.dark-mode .project-gallery figcaption,
+body.dark-mode .project-description,
+body.dark-mode .project-tags {
+    color: #cfe6ff;
+}
+body.dark-mode .project-github-link {
+    color: #e6f0ff;
+    border-color: #e6f0ff;
+}
+body.dark-mode .project-info-title,
+body.dark-mode .project-info-desc,
+body.dark-mode .project-info-tags {
+    color: #e6f0ff;
+}
+
 /* Image modal / lightbox */
 .image-modal-overlay {
     position: fixed;

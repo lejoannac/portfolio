@@ -155,6 +155,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// If we landed on projects.html with a hash, smoothly scroll to that project
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const path = window.location.pathname;
+        const isProjects = path.endsWith('projects.html') || path.endsWith('/projects.html');
+        if (isProjects && window.location.hash) {
+            const id = window.location.hash.substring(1);
+            const el = document.getElementById(id);
+            if (el) {
+                // small timeout to allow layout to settle
+                setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+            }
+        }
+    } catch (e) {
+        // ignore
+    }
+});
+
 // Add this to your app.js file
 
 function copyEmail() {
