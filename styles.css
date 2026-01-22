@@ -148,6 +148,18 @@ body.dark-mode .header-button img {
     background-color: #e0e0e0;
 }
 
+/* Fixed header for projects page */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.projects-page {
+    padding-top: 60px; /* Adjust based on header height */
+}
+
 /* Dark mode styles for hamburger menu */
 body.dark-mode .hamburger-line {
     background-color: #e6f0ff;
@@ -1065,11 +1077,11 @@ body.dark-mode .button-icon {
     }
     
     .main-title {
-        font-size: 100px;
+        font-size: 90px;
         width: 100%;
         min-width: 0;
-        text-align: left;
-        margin: 0 0 0 20px;
+        text-align: center;
+        margin: 0 auto;
     }
     
     /* Show hamburger menu and hide regular header buttons on mobile */
@@ -1147,7 +1159,7 @@ body.dark-mode .button-icon {
 @media (max-width: 900px) {
     .main-content .main-title {
         text-align: left;
-        margin: 0 0 40px 20px;
+        margin: 0 0 40px 0;
         width: 100%;
         min-width: 0;
     }
