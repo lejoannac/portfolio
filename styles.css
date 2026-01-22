@@ -1065,11 +1065,11 @@ body.dark-mode .button-icon {
     }
     
     .main-title {
-        font-size: 90px;
+        font-size: 100px;
         width: 100%;
         min-width: 0;
-        text-align: center;
-        margin: 0 auto;
+        text-align: left;
+        margin: 0 0 0 20px;
     }
     
     /* Show hamburger menu and hide regular header buttons on mobile */
@@ -1094,7 +1094,7 @@ body.dark-mode .button-icon {
     .main-content {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 10px;
         margin: 0;
     }
     .main-title {
@@ -1147,7 +1147,7 @@ body.dark-mode .button-icon {
 @media (max-width: 900px) {
     .main-content .main-title {
         text-align: left;
-        margin: 0 0 40px 0;
+        margin: 0 0 40px 20px;
         width: 100%;
         min-width: 0;
     }
@@ -1181,7 +1181,7 @@ body.dark-mode .button-icon {
         min-width: 0;
         width: 100%;
         max-width: 100%;
-        aspect-ratio: unset;
+        aspect-ratio: 1 / 1;
         height: auto;
     }
     
@@ -1238,6 +1238,7 @@ body.dark-mode .button-icon {
     .main-intro {
         margin-left: 0;
         text-align: left;
+        margin-top: 60px;
     }
 }
 
