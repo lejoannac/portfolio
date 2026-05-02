@@ -1008,12 +1008,15 @@ body.dark-mode .contact-button:hover {
 }
 .project-gallery figure {
     margin: 0;
+    overflow: hidden;
+    border-radius: 10px;
 }
 .project-gallery img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: none;
+    transition: transform 0.3s ease;
 }
 .project-gallery figcaption {
     margin-top: 6px;
@@ -1324,7 +1327,9 @@ body.dark-mode .button-icon {
     height: 300px;
     overflow: hidden;
     border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    background: transparent;
+    border: none;
 }
 
 .project-image img {
@@ -1334,7 +1339,8 @@ body.dark-mode .button-icon {
     transition: transform 0.3s ease;
 }
 
-.project-image:hover img {
+.project-image > img:hover,
+.project-gallery img:hover {
     transform: scale(1.05);
 }
 
