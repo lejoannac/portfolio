@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="main-intro">
-        Hi! I'Sm a mechanical and electrical engineering student at the University of British Columbia. I work with controls, autonomous robotics, and creative technology — based in Vancouver. Let's create!
+        Hi! I'm a mechanical and electrical engineering student at the University of British Columbia. I work with controls, autonomous robotics, and creative technology — based in Vancouver. Let's create!
         <div class="main-buttons">
             <button class="aboutm-button">About Me</button>
             <button class="discover-button" id="discover-scroll-btn">Discover My Work</button>
@@ -59,10 +59,11 @@
     <main id="work">
         <div class="projects-header">
             <h1 class="projects-title">my work.</h1>
-            <a class="show-more-btn" href="projects.html">Show More</a>
+            <a class="show-more-btn" href="projects.html">Show All</a>
         </div>
         <div class="projects-grid">
             <a href="projects.html#linear-potentiometer-mounts" class="project-link">
+                <div class="project-card">
                 <div class="project-square">
                     <img src="assets/shockpot.png" alt="Linear Potentiometer Mounts screenshot">
                     <div class="project-info-overlay">
@@ -73,8 +74,15 @@
                         <div class="project-info-tags">Solidworks, STM32, C, Shop Skills</div>
                     </div>
                 </div>
+                <div class="project-summary">
+                    <h3 class="project-summary-title">Linear Potentiometer Mounts</h3>
+                    <p class="project-summary-desc">Mechanical mounts and prototypes for linear potentiometers used in sensing and position feedback.</p>
+                    <div class="project-summary-tags">Solidworks · STM32 · C · Shop Skills</div>
+                </div>
+                </div>
             </a>
             <a href="projects.html#blipyboard" class="project-link">
+                <div class="project-card">
                 <div class="project-square">
                     <img src="assets/blipyboard.png" alt="Project 2">
                     <div class="project-info-overlay">
@@ -85,8 +93,15 @@
                         <div class="project-info-tags">KiCad Fusion360 Python</div>
                     </div>
                 </div>
+                <div class="project-summary">
+                    <h3 class="project-summary-title">blipyboard</h3>
+                    <p class="project-summary-desc">An 8 key macropad with an OLED screen, potentiometer, SK6812 lighting, and custom KMK firmware.</p>
+                    <div class="project-summary-tags">KiCad · Fusion360 · Python</div>
+                </div>
+                </div>
             </a>
             <a href="projects.html#melokey" class="project-link">
+                <div class="project-card">
                 <div class="project-square">
                     <img src="assets/melokey.png" alt="melokey project">
                     <div class="project-info-overlay">
@@ -97,8 +112,15 @@
                         <div class="project-info-tags">KiCad Fusion360 Swift</div>
                     </div>
                 </div>
+                <div class="project-summary">
+                    <h3 class="project-summary-title">melokey.</h3>
+                    <p class="project-summary-desc">An electronic MIDI keyboard built to support neurodivergent learners and improve access to music production.</p>
+                    <div class="project-summary-tags">KiCad · Fusion360 · Swift</div>
+                </div>
+                </div>
             </a>
             <a href="projects.html#linear-gripper" class="project-link">
+                <div class="project-card">
                 <div class="project-square">
                     <img src="assets/gripper.png" alt="Linear Gripper">
                     <div class="project-info-overlay">
@@ -107,17 +129,60 @@
                         <div class="project-info-tags">Solidworks, Research</div>
                     </div>
                 </div>
+                <div class="project-summary">
+                    <h3 class="project-summary-title">Linear Gripper</h3>
+                    <p class="project-summary-desc">A compact linear gripper prototype for precise object manipulation and testing.</p>
+                    <div class="project-summary-tags">Solidworks · Research</div>
+                </div>
+                </div>
             </a>
         </div>
     </main>
     <!-- Projects Section -->
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="section-title">experience.</div>
+        <div class="experience-list">
+            <article class="experience-item">
+                <div class="experience-item-header">
+                    <div>
+                        <div class="experience-role">Engineering Intern</div>
+                        <div class="experience-company">Nokia</div>
+                    </div>
+                    <div class="experience-date">May 2024 — Aug 2024</div>
+                </div>
+                <p>Worked on API testing, automation, and reliability improvements for Nokia's notifier platform.</p>
+                <ul>
+                    <li>Built pytest test suites and automated API contract checks.</li>
+                    <li>Added schemathesis-driven validation to improve endpoint stability.</li>
+                    <li>Documented failure cases and reduced test flakiness across releases.</li>
+                </ul>
+            </article>
+            <article class="experience-item">
+                <div class="experience-item-header">
+                    <div>
+                        <div class="experience-role">Project Lead</div>
+                        <div class="experience-company">Melokey</div>
+                    </div>
+                    <div class="experience-date">2023 — Present</div>
+                </div>
+                <p>Designed an inclusive MIDI keyboard for neurodivergent learners, combining hardware, firmware, and interaction flow design.</p>
+                <ul>
+                    <li>Led electronics design, firmware integration, and usability testing.</li>
+                    <li>Incorporated audio and visual feedback for accessible music interaction.</li>
+                    <li>Collaborated with learners to refine the product's accessibility features.</li>
+                </ul>
+            </article>
+        </div>
+    </section>
 
     <!-- About Me Section -->
     <section class="about-section" id="about">
         <h1 class="about-title">about.</h1>
         <div class="about-content">
             <div class="about-intro">
-                I'm curious about the world of how mechatronics intersect with inclusive design and interativity.
+                I'm curious about the world of how mechatronics intersect with inclusive design and interactivity.
             </div>
             <div class="about-image-section">
                 <img class="about-image" src="assets/about-photo.png" alt="About Me Photo">
