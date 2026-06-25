@@ -12,6 +12,7 @@
         <div class="header-buttons">
             <a class="header-button" href="index.html">Home</a>
             <a class="header-button" id="projects-header-btn" href="index.html#work">Projects</a>
+            <a class="header-button" href="index.html#experience">Experience</a>
             <a class="header-button" href="index.html#about">About</a>
             <a class="header-button" href="contact.html">Contact</a>
             <!-- Download CV button added to header (uses cv-button styling defined in styles.css) -->
@@ -29,6 +30,7 @@
     <div class="mobile-menu">
         <a class="mobile-menu-item" href="index.html">Home</a>
         <a class="mobile-menu-item" href="index.html#work">Projects</a>
+        <a class="mobile-menu-item" href="index.html#experience">Experience</a>
         <a class="mobile-menu-item" href="index.html#about">About</a>
         <a class="mobile-menu-item" href="contact.html">Contact</a>
         <!-- Mobile menu CV download -->
@@ -147,31 +149,63 @@
             <article class="experience-item">
                 <div class="experience-item-header">
                     <div>
-                        <div class="experience-role">Engineering Intern</div>
-                        <div class="experience-company">Nokia</div>
+                        <div class="experience-role">Product Engineer Intern</div>
+                        <div class="experience-company">National AccessArts Centre</div>
                     </div>
-                    <div class="experience-date">May 2024 — Aug 2024</div>
+                    <div class="experience-date">May 2026 — Present</div>
                 </div>
-                <p>Worked on API testing, automation, and reliability improvements for Nokia's notifier platform.</p>
+                <p>Developed accessible assistive technology and rapid-prototyping workflows for creative tools used by artists with limited mobility.</p>
                 <ul>
-                    <li>Built pytest test suites and automated API contract checks.</li>
-                    <li>Added schemathesis-driven validation to improve endpoint stability.</li>
-                    <li>Documented failure cases and reduced test flakiness across releases.</li>
+                    <li>Built a Bluetooth MIDI guitar strumming device using ESP32, IMU-based arm motion sensing, embedded C++, and a custom 3D-printed enclosure.</li>
+                    <li>Designed and assembled a custom USB MIDI controller PCB in Altium with Raspberry Pi Pico, joystick, and tactile inputs for instrument emulation.</li>
+                    <li>Accelerated prototype development by designing, fabricating, and assembling mechanical components using SolidWorks, 3D printing, soldering, and rapid prototyping.</li>
+                    <li>Designed a 3D-printed paint tube roller to simplify paint extraction and uncapping for artists with limited hand mobility.</li>
                 </ul>
             </article>
             <article class="experience-item">
                 <div class="experience-item-header">
                     <div>
-                        <div class="experience-role">Project Lead</div>
-                        <div class="experience-company">Melokey</div>
+                        <div class="experience-role">Mechatronics Subteam Member</div>
+                        <div class="experience-company">UBC Baja SAE Design Team</div>
                     </div>
-                    <div class="experience-date">2023 — Present</div>
+                    <div class="experience-date">Sept 2025 — Present</div>
                 </div>
-                <p>Designed an inclusive MIDI keyboard for neurodivergent learners, combining hardware, firmware, and interaction flow design.</p>
+                <p>Contributed electrical and sensor integration work to the vehicle's autonomous subsystem, with a focus on reliable power, communication, and manufacturable design.</p>
                 <ul>
-                    <li>Led electronics design, firmware integration, and usability testing.</li>
-                    <li>Incorporated audio and visual feedback for accessible music interaction.</li>
-                    <li>Collaborated with learners to refine the product's accessibility features.</li>
+                    <li>Designed a custom LiDAR interface PCB to integrate an RPLIDAR A1 into the vehicle electrical system with 12V regulation, transient protection, and UART communication.</li>
+                    <li>Improved sensor reliability by characterizing LiDAR performance under automotive vibration and electrical noise to guide connector and harness design.</li>
+                    <li>Implemented CAN communication on an STM32 microcontroller to distribute LiDAR data across the vehicle electrical architecture.</li>
+                    <li>Designed and assembled the primary wiring harness, integrating power, sensor, and custom PCB connections for reliable system communication.</li>
+                </ul>
+            </article>
+            <article class="experience-item">
+                <div class="experience-item-header">
+                    <div>
+                        <div class="experience-role">Undergraduate Research Assistant</div>
+                        <div class="experience-company">PRIME Robotics Lab — Dr. Chao Liu</div>
+                    </div>
+                    <div class="experience-date">Sept 2025 — Present</div>
+                </div>
+                <p>Supported research in robotic manipulation and tactile sensing, focusing on design for reliable automated handling.</p>
+                <ul>
+                    <li>Designed a precision robotic gripper in SolidWorks for automated PCB handling, optimizing geometry for reliable grasping and manufacturability.</li>
+                    <li>Investigated tactile sensing, robotic manipulation, and machine learning techniques through literature review and design tradeoff documentation.</li>
+                    <li>Collaborated with graduate researchers to analyze tactile, visual, and motion sensor data for human feedback replication in robotic manipulation.</li>
+                </ul>
+            </article>
+            <article class="experience-item">
+                <div class="experience-item-header">
+                    <div>
+                        <div class="experience-role">Software Engineering Future Tech Intern</div>
+                        <div class="experience-company">Nokia</div>
+                    </div>
+                    <div class="experience-date">July 2024 — Aug 2024</div>
+                </div>
+                <p>Delivered API test automation and validation work for Nokia's Notifier API while communicating results across engineering and security teams.</p>
+                <ul>
+                    <li>Increased API test coverage by developing automated testing frameworks using Pytest and Schemathesis.</li>
+                    <li>Validated endpoint behavior and documented failure scenarios to improve release confidence.</li>
+                    <li>Communicated testing results and technical recommendations to software and security stakeholders for prioritization and implementation.</li>
                 </ul>
             </article>
         </div>

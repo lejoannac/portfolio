@@ -12,6 +12,7 @@
         <div class="header-buttons">
             <a class="header-button" href="index.html">Home</a>
             <a class="header-button" id="projects-header-btn" href="index.html#work">Projects</a>
+            <a class="header-button" href="index.html#experience">Experience</a>
             <a class="header-button" href="index.html#about">About</a>
             <a class="header-button" href="contact.html">Contact</a>
             <button class="header-button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
@@ -27,6 +28,7 @@
     <div class="mobile-menu">
         <a class="mobile-menu-item" href="index.html">Home</a>
         <a class="mobile-menu-item" href="index.html#work">Projects</a>
+        <a class="mobile-menu-item" href="index.html#experience">Experience</a>
         <a class="mobile-menu-item" href="index.html#about">About</a>
         <a class="mobile-menu-item" href="contact.html">Contact</a>
         <button class="mobile-menu-item" onclick="toggleDarkMode()">Toggle Dark Mode</button>
@@ -37,7 +39,7 @@
             <span class="contact-title-line" id="contact-line-2">MESSAGE</span>
         </div>
         <div class="contact-email-row">
-            <span class="contact-email">jxcai534@gmail.com</span>
+            <a href="mailto:jxcai534@gmail.com" class="contact-email">jxcai534@gmail.com</a>
             <button class="copy-btn" onclick="copyEmail()" aria-label="Copy email">
                 <img src="assets/copy.svg" alt="Copy" class="copy-icon">
             </button>
@@ -53,6 +55,7 @@
         </form>
     </div>
     
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
     <script src="app.js"></script>
     <script>
         function toggleDarkMode() {

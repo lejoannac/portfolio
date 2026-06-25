@@ -244,6 +244,87 @@ function fallbackCopyText(text) {
     document.body.removeChild(textArea);
 }
 
+// Generic toast used for form feedback
+function showToast(message) {
+    const popup = document.createElement('div');
+    popup.innerHTML = message || '';
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    popup.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: ${isDarkMode ? 'rgba(34, 51, 102, 0.9)' : 'rgba(0, 31, 77, 0.9)'};
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+        box-shadow: 0 4px 16px rgba(0, 31, 77, 0.3);
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border: 2px solid ${isDarkMode ? 'rgba(34, 51, 102, 0.8)' : 'rgba(0, 31, 77, 0.8)'};
+        backdrop-filter: blur(8px);
+    `;
+    document.body.appendChild(popup);
+    setTimeout(() => { popup.style.opacity = '1'; }, 10);
+    setTimeout(() => {
+        popup.style.opacity = '0';
+        setTimeout(() => popup.remove(), 300);
+    }, 2200);
+}
+
+// EmailJS contact form integration
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+
+    // Initialize EmailJS - replace with your user ID from emailjs.com
+    try {
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init('YOUR_EMAILJS_USER_ID');
+        }
+    } catch (err) {
+        console.warn('EmailJS not loaded:', err);
+    }
+
+    const submitBtn = form.querySelector('.submit-btn');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+        }
+
+        // Replace these placeholders with your EmailJS service/template IDs
+        const SERVICE_ID = 'service_722xbcu';
+        const TEMPLATE_ID = 'template_f201grs';
+
+        if (typeof emailjs === 'undefined') {
+            showToast('Email service unavailable.');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+            return;
+        }
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
+            .then(function() {
+                showToast('Message sent — thank you!');
+                form.reset();
+                if (submitBtn) { submitBtn.textContent = 'Sent!'; }
+                setTimeout(() => {
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+                }, 2000);
+            }, function(error) {
+                console.error('EmailJS error:', error);
+                showToast('Failed to send message. Try again later.');
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+            });
+    });
+});
+
 // Image modal/lightbox functionality
 function openImageModal(src, alt) {
     // prevent multiple overlays
