@@ -155,21 +155,80 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// If we landed on projects.html with a hash, smoothly scroll to that project
+// Project card modal: click a project tile to open its full case study,
+// back out to return to the grid. Supports deep-linking via #project-id.
 document.addEventListener('DOMContentLoaded', function() {
-    try {
-        const path = window.location.pathname;
-        const isProjects = path.endsWith('projects.html') || path.endsWith('/projects.html');
-        if (isProjects && window.location.hash) {
-            const id = window.location.hash.substring(1);
-            const el = document.getElementById(id);
-            if (el) {
-                // small timeout to allow layout to settle
-                setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
-            }
+    const overlay = document.getElementById('projectModalOverlay');
+    if (!overlay) return; // not on projects page
+
+    const closeBtn = document.getElementById('projectModalClose');
+    const backBtn = document.getElementById('projectModalBack');
+    const scroll = document.getElementById('projectModalScroll');
+    const tiles = document.querySelectorAll('.project-tile, [data-project]');
+    let lastFocused = null;
+
+    function openProjectModal(id, opts) {
+        const target = document.getElementById(id);
+        if (!target || !target.classList.contains('project-detail')) return;
+        document.querySelectorAll('.project-detail.active').forEach(d => d.classList.remove('active'));
+        target.classList.add('active');
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (scroll) scroll.scrollTop = 0;
+        if (!opts || opts.pushState !== false) {
+            history.pushState({ project: id }, '', '#' + id);
         }
-    } catch (e) {
-        // ignore
+        closeBtn.focus();
+    }
+
+    function closeProjectModal(opts) {
+        if (!overlay.classList.contains('open')) return;
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if ((!opts || opts.popHistory !== false) && window.location.hash) {
+            history.pushState(null, '', window.location.pathname + window.location.search);
+        }
+        if (lastFocused) lastFocused.focus();
+    }
+
+    tiles.forEach(tile => {
+        tile.addEventListener('click', function(e) {
+            e.preventDefault();
+            lastFocused = tile;
+            openProjectModal(tile.dataset.project);
+        });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', () => closeProjectModal());
+    if (backBtn) backBtn.addEventListener('click', () => closeProjectModal());
+
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeProjectModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) closeProjectModal();
+    });
+
+    window.addEventListener('popstate', function() {
+        const id = window.location.hash.substring(1);
+        const el = id ? document.getElementById(id) : null;
+        if (el && el.classList.contains('project-detail')) {
+            openProjectModal(id, { pushState: false });
+        } else {
+            closeProjectModal({ popHistory: false });
+        }
+    });
+
+    // Open directly if the page was loaded with a project hash (e.g. linked from index.html)
+    if (window.location.hash) {
+        const id = window.location.hash.substring(1);
+        const el = document.getElementById(id);
+        if (el && el.classList.contains('project-detail')) {
+            openProjectModal(id, { pushState: false });
+        }
     }
 });
 

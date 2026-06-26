@@ -3,263 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Joanna Cai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <a class="header-title" href="index.html">JOANNA</a>
-        <div class="header-buttons">
-            <a class="header-button" href="index.html">Home</a>
-            <a class="header-button" id="projects-header-btn" href="index.html#work">Projects</a>
-            <a class="header-button" href="index.html#experience">Experience</a>
-            <a class="header-button" href="index.html#about">About</a>
-            <a class="header-button" href="contact.html">Contact</a>
-            <!-- Download CV button added to header (uses cv-button styling defined in styles.css) -->
-            <a class="cv-button" href="assets/JoannaCaiResume.docx.pdf" download aria-label="Download CV">Download CV</a>
-            <button class="header-button" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
-                <img src="assets/dark.svg" alt="Dark Mode" style="width:22px; height:22px; display:inline-block; vertical-align:middle;">
-            </button>
-        </div>
-        <button class="hamburger-menu" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-    </header>
-    <div class="mobile-menu">
-        <a class="mobile-menu-item" href="index.html">Home</a>
-        <a class="mobile-menu-item" href="index.html#work">Projects</a>
-        <a class="mobile-menu-item" href="index.html#experience">Experience</a>
-        <a class="mobile-menu-item" href="index.html#about">About</a>
-        <a class="mobile-menu-item" href="contact.html">Contact</a>
-        <!-- Mobile menu CV download -->
-        <a class="mobile-menu-item" href="assets/JoannaCaiResume.docx.pdf" download>Download CV</a>
-        <button class="mobile-menu-item" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-    </div>
-    <div class="main-content">
-        <div class="main-title">
-            <span class="line">JOANNA</span>
-            <span class="line">CAI</span>
-        </div>
-        <div class="main-right">
-            <div class="profile-photo-container">
-                <img class="main-image" src="assets/pfp.jpeg" alt="Joanna Cai profile photo">
-                <!-- grad.svg will be layered as background in CSS -->
+<body class="portfolio-home">
+    <div class="page">
+        <div class="nav">
+            <div class="navname">Joanna Cai</div>
+            <div class="navl">
+                <a href="#work">Work</a>
+                <a href="about.html">About</a>
+                <a href="#creative" hidden>Creative Corner</a>
+                <a href="assets/JoannaCaiResume.docx.pdf" target="_blank" rel="noopener">Resume ↗</a>
+                <a href="mailto:jxcai534@gmail.com">Contact</a>
             </div>
         </div>
-    </div>
-    <div class="main-intro">
-        Hi! I'm a mechanical and electrical engineering student at the University of British Columbia. I work with controls, autonomous robotics, and creative technology — based in Vancouver. Let's create!
-        <div class="main-buttons">
-            <button class="aboutm-button">About Me</button>
-            <button class="discover-button" id="discover-scroll-btn">Discover My Work</button>
-        </div>
-    </div>
 
-    <!-- Begin Projects Section -->
-    <main id="work">
-        <div class="projects-header">
-            <h1 class="projects-title">my work.</h1>
-            <a class="show-more-btn" href="projects.html">Show All</a>
-        </div>
-        <div class="projects-grid">
-            <a href="projects.html#linear-potentiometer-mounts" class="project-link">
-                <div class="project-card">
-                <div class="project-square">
-                    <img src="assets/shockpot.png" alt="Linear Potentiometer Mounts screenshot">
-                    <div class="project-info-overlay">
-                        <div class="project-info-title">Linear Potentiometer Mounts</div>
-                        <div class="project-info-desc">
-                            Mechanical mounts and prototypes for linear potentiometers used in sensing and position feedback.
+        <div class="cgrid">
+            <div class="crail" id="about">
+                <div class="hugeName">Joanna<br>Cai <span class="ital acc">:)</span></div>
+                <div class="kicker">INTEGRATED ENGINEERING · CLASS OF '29</div>
+                <img class="railphoto" src="assets/pfp.jpeg" alt="Joanna Cai">
+                <p class="cabout">Hi! I design the mechanical &amp; electrical guts of autonomous robotics and creative technology — enclosures, custom PCBs, and the firmware that ties them together. Happiest while tinkering with my hands or eating a sweet treat. </p>
+                <div class="nowline"><span class="dot"></span>Now: LiDAR data acquisition for UBC Baja SAE 🚗</div>
+                <div class="toolhead">TOOLBOX</div>
+                <div class="skill"><span>SolidWorks · Fusion 360</span><span class="acc">CAD</span></div>
+                <div class="skill"><span>Altium · KiCad</span><span class="acc">PCB</span></div>
+                <div class="skill"><span>ESP32 · STM32 · Raspberry PI ·CAN · UART</span><span class="acc">embedded</span></div>
+                <div class="skill"><span>C/C++ · Python · MATLAB · JavaScript · HTML/CSS</span><span class="acc">languages</span></div>
+                <div class="skill"><span>Git · Figma · Oscilloscope · Multimeter</span><span class="acc">tools</span></div>
+                <div class="fx gap16" style="margin-top:26px">
+                    <a class="raillink" href="https://github.com/lejoannac" target="_blank">GitHub →</a>
+                    <a class="raillink" href="https://www.linkedin.com/in/jcai023" target="_blank">LinkedIn →</a>
+                    <a class="raillink" href="mailto:jxcai534@gmail.com">Email →</a>
+                </div>
+            </div>
+
+            <div>
+                <div class="section" id="work">
+                    <div class="sechead">
+                        <div class="h2">Selected Work</div>
+                        <div class="count">06 projects</div>
+                    </div>
+
+                    <button class="irow" type="button" data-project="linear-potentiometer-mounts">
+                        <img class="ithumb" src="assets/shockpot.png" alt="Linear Potentiometer Mounts">
+                        <div class="f1">
+                            <div class="ititle">Linear Potentiometer Mounts</div>
+                            <div class="iblurb">Waterjet-cut mounts that bolt linear pots onto the Baja car's suspension for real-time travel telemetry over CAN.</div>
                         </div>
-                        <div class="project-info-tags">Solidworks, STM32, C, Shop Skills</div>
-                    </div>
-                </div>
-                <div class="project-summary">
-                    <h3 class="project-summary-title">Linear Potentiometer Mounts</h3>
-                    <p class="project-summary-desc">Mechanical mounts and prototypes for linear potentiometers used in sensing and position feedback.</p>
-                    <div class="project-summary-tags">Solidworks · STM32 · C · Shop Skills</div>
-                </div>
-                </div>
-            </a>
-            <a href="projects.html#blipyboard" class="project-link">
-                <div class="project-card">
-                <div class="project-square">
-                    <img src="assets/blipyboard.png" alt="Project 2">
-                    <div class="project-info-overlay">
-                        <div class="project-info-title">blipyboard</div>
-                        <div class="project-info-desc">
-                            An 8 key macropad with an OLED screen and potentiometer. It also has 8 SK6812 leds for lighting and utilizes custom KMK firmware.
+                        <div class="itags">SolidWorks · STM32 · C</div>
+                        <div class="arrow">↗</div>
+                    </button>
+
+                    <button class="irow" type="button" data-project="melokey">
+                        <img class="ithumb" src="assets/melokey.png" alt="melokey">
+                        <div class="f1">
+                            <div class="ititle">melokey</div>
+                            <div class="iblurb">An accessible USB-MIDI keyboard — custom PCB, enclosure &amp; iOS app — built to support neurodivergent learners.</div>
                         </div>
-                        <div class="project-info-tags">KiCad Fusion360 Python</div>
-                    </div>
-                </div>
-                <div class="project-summary">
-                    <h3 class="project-summary-title">blipyboard</h3>
-                    <p class="project-summary-desc">An 8 key macropad with an OLED screen, potentiometer, SK6812 lighting, and custom KMK firmware.</p>
-                    <div class="project-summary-tags">KiCad · Fusion360 · Python</div>
-                </div>
-                </div>
-            </a>
-            <a href="projects.html#melokey" class="project-link">
-                <div class="project-card">
-                <div class="project-square">
-                    <img src="assets/melokey.png" alt="melokey project">
-                    <div class="project-info-overlay">
-                        <div class="project-info-title">melokey.</div>
-                        <div class="project-info-desc">
-                            An electronic (MIDI) keyboard designed with the purpose of educating neurodivergent students and providing them with a pathway to music production
+                        <div class="itags">KiCad · Fusion 360 · Swift</div>
+                        <div class="arrow">↗</div>
+                    </button>
+
+                    <button class="irow" type="button" data-project="blipyboard">
+                        <img class="ithumb" src="assets/blipyboard.png" alt="blipyboard">
+                        <div class="f1">
+                            <div class="ititle">blipyboard</div>
+                            <div class="iblurb">An 8-key macro pad with a rotary encoder, OLED &amp; SK6812 RGB, running custom KMK firmware.</div>
                         </div>
-                        <div class="project-info-tags">KiCad Fusion360 Swift</div>
-                    </div>
-                </div>
-                <div class="project-summary">
-                    <h3 class="project-summary-title">melokey.</h3>
-                    <p class="project-summary-desc">An electronic MIDI keyboard built to support neurodivergent learners and improve access to music production.</p>
-                    <div class="project-summary-tags">KiCad · Fusion360 · Swift</div>
-                </div>
-                </div>
-            </a>
-            <a href="projects.html#linear-gripper" class="project-link">
-                <div class="project-card">
-                <div class="project-square">
-                    <img src="assets/gripper.png" alt="Linear Gripper">
-                    <div class="project-info-overlay">
-                        <div class="project-info-title">Linear Gripper</div>
-                        <div class="project-info-desc">A compact linear gripper prototype for precise object manipulation and testing.</div>
-                        <div class="project-info-tags">Solidworks, Research</div>
-                    </div>
-                </div>
-                <div class="project-summary">
-                    <h3 class="project-summary-title">Linear Gripper</h3>
-                    <p class="project-summary-desc">A compact linear gripper prototype for precise object manipulation and testing.</p>
-                    <div class="project-summary-tags">Solidworks · Research</div>
-                </div>
-                </div>
-            </a>
-        </div>
-    </main>
-    <!-- Projects Section -->
+                        <div class="itags">KiCad · Fusion 360 · KMK</div>
+                        <div class="arrow">↗</div>
+                    </button>
 
-    <!-- Experience Section -->
-    <section class="experience-section" id="experience">
-        <div class="section-title">experience.</div>
-        <div class="experience-list">
-            <article class="experience-item">
-                <div class="experience-item-header">
-                    <div>
-                        <div class="experience-role">Product Engineer Intern</div>
-                        <div class="experience-company">National AccessArts Centre</div>
-                    </div>
-                    <div class="experience-date">May 2026 — Present</div>
-                </div>
-                <p>Developed accessible assistive technology and rapid-prototyping workflows for creative tools used by artists with limited mobility.</p>
-                <ul>
-                    <li>Built a Bluetooth MIDI guitar strumming device using ESP32, IMU-based arm motion sensing, embedded C++, and a custom 3D-printed enclosure.</li>
-                    <li>Designed and assembled a custom USB MIDI controller PCB in Altium with Raspberry Pi Pico, joystick, and tactile inputs for instrument emulation.</li>
-                    <li>Accelerated prototype development by designing, fabricating, and assembling mechanical components using SolidWorks, 3D printing, soldering, and rapid prototyping.</li>
-                    <li>Designed a 3D-printed paint tube roller to simplify paint extraction and uncapping for artists with limited hand mobility.</li>
-                </ul>
-            </article>
-            <article class="experience-item">
-                <div class="experience-item-header">
-                    <div>
-                        <div class="experience-role">Mechatronics Subteam Member</div>
-                        <div class="experience-company">UBC Baja SAE Design Team</div>
-                    </div>
-                    <div class="experience-date">Sept 2025 — Present</div>
-                </div>
-                <p>Contributed electrical and sensor integration work to the vehicle's autonomous subsystem, with a focus on reliable power, communication, and manufacturable design.</p>
-                <ul>
-                    <li>Designed a custom LiDAR interface PCB to integrate an RPLIDAR A1 into the vehicle electrical system with 12V regulation, transient protection, and UART communication.</li>
-                    <li>Improved sensor reliability by characterizing LiDAR performance under automotive vibration and electrical noise to guide connector and harness design.</li>
-                    <li>Implemented CAN communication on an STM32 microcontroller to distribute LiDAR data across the vehicle electrical architecture.</li>
-                    <li>Designed and assembled the primary wiring harness, integrating power, sensor, and custom PCB connections for reliable system communication.</li>
-                </ul>
-            </article>
-            <article class="experience-item">
-                <div class="experience-item-header">
-                    <div>
-                        <div class="experience-role">Undergraduate Research Assistant</div>
-                        <div class="experience-company">PRIME Robotics Lab — Dr. Chao Liu</div>
-                    </div>
-                    <div class="experience-date">Sept 2025 — Present</div>
-                </div>
-                <p>Supported research in robotic manipulation and tactile sensing, focusing on design for reliable automated handling.</p>
-                <ul>
-                    <li>Designed a precision robotic gripper in SolidWorks for automated PCB handling, optimizing geometry for reliable grasping and manufacturability.</li>
-                    <li>Investigated tactile sensing, robotic manipulation, and machine learning techniques through literature review and design tradeoff documentation.</li>
-                    <li>Collaborated with graduate researchers to analyze tactile, visual, and motion sensor data for human feedback replication in robotic manipulation.</li>
-                </ul>
-            </article>
-            <article class="experience-item">
-                <div class="experience-item-header">
-                    <div>
-                        <div class="experience-role">Software Engineering Future Tech Intern</div>
-                        <div class="experience-company">Nokia</div>
-                    </div>
-                    <div class="experience-date">July 2024 — Aug 2024</div>
-                </div>
-                <p>Delivered API test automation and validation work for Nokia's Notifier API while communicating results across engineering and security teams.</p>
-                <ul>
-                    <li>Increased API test coverage by developing automated testing frameworks using Pytest and Schemathesis.</li>
-                    <li>Validated endpoint behavior and documented failure scenarios to improve release confidence.</li>
-                    <li>Communicated testing results and technical recommendations to software and security stakeholders for prioritization and implementation.</li>
-                </ul>
-            </article>
-        </div>
-    </section>
+                    <button class="irow" type="button" data-project="linear-gripper">
+                        <img class="ithumb" src="assets/gripper.png" alt="Linear Gripper">
+                        <div class="f1">
+                            <div class="ititle">Linear Gripper</div>
+                            <div class="iblurb">A precision linear gripper for handling test tubes and scoopulas at the PRIME Robotics Lab.</div>
+                        </div>
+                        <div class="itags">SolidWorks · Research</div>
+                        <div class="arrow">↗</div>
+                    </button>
 
-    <!-- About Me Section -->
-    <section class="about-section" id="about">
-        <h1 class="about-title">about.</h1>
-        <div class="about-content">
-            <div class="about-intro">
-                I'm curious about the world of how mechatronics intersect with inclusive design and interactivity.
-            </div>
-            <div class="about-image-section">
-                <img class="about-image" src="assets/about-photo.png" alt="About Me Photo">
-            <div class="about-paragraph">
-                <p>
-                    I'm Joanna Cai, an undergraduate engineering student from the University of British Columbia, born and raised in Vancouver B.C. I hope to improve accessibility for inclusive learning around the globe radically. With my specialized skillset I'm working towards building a new world of interactive installations to Canada. <br>
-                    <span style="display:block; height: 12px;"></span>
-                    In 2024, I interned with Nokia, learning the basics of pytest and schemathesis with Nokia's notifier API in a corporate setting. <br>
-                    <span style="display:block; height: 12px;"></span>
-                    Combining my passions of music, engineering, and a curiosity for neurodiversity advocacy, I created Melokey.
-                </p>
-                <div class="main-buttons">
-                    <a class="cv-button" href="assets/JoannaCaiResume.docx.pdf" target="_blank" rel="noopener">
-                        Download CV
-                    </a>
+                    <button class="irow" type="button" data-project="the-roley">
+                        <img class="ithumb" src="assets/roley.png" alt="The Roley">
+                        <div class="f1">
+                            <div class="ititle">The Roley</div>
+                            <div class="iblurb">An accessible toothpaste dispenser for users with limited grip strength.</div>
+                        </div>
+                        <div class="itags">SolidWorks · FEA</div>
+                        <div class="arrow">↗</div>
+                    </button>
+
+                    <button class="irow" type="button" data-project="personal-portfolio">
+                        <img class="ithumb" src="assets/web.png" alt="Personal Portfolio Website">
+                        <div class="f1">
+                            <div class="ititle">Personal Portfolio Website</div>
+                            <div class="iblurb">A concise site to showcase my projects and share a little bit about me.</div>
+                        </div>
+                        <div class="itags">HTML · CSS · JavaScript</div>
+                        <div class="arrow">↗</div>
+                    </button>
+                </div>
+
+                <div class="creative" id="creative" hidden>
+                    <div class="cceyebrow">✶ OFF THE CLOCK</div>
+                    <div class="cchead">Creative Corner</div>
+                    <p class="ccsub">Engineering is most of what I do — but not all of me. A few things I make when there isn't a deadline:</p>
+                    <div class="ccgrid">
+                        <div class="pola bob" style="transform:rotate(-3deg)">
+                            <div class="ph" style="height:150px">[ photo ]</div>
+                            <div class="cap"><span class="captitle">photography</span>35mm, travel &amp; friends</div>
+                        </div>
+                        <div class="pola bob2" style="transform:rotate(2deg)">
+                            <div class="ph" style="height:150px">[ touchdesigner ]</div>
+                            <div class="cap"><span class="captitle">TouchDesigner</span>generative visuals &amp; interactive installs</div>
+                        </div>
+                        <div class="pola bob" style="transform:rotate(-2deg)">
+                            <div class="ph" style="height:150px">[ figma frames ]</div>
+                            <div class="cap"><span class="captitle">Figma design</span>UI, posters &amp; little brand bits</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="foot" id="contact">
+                    <div class="footbig">Let's build<br>something. →</div>
+                    <a class="cta" href="mailto:jxcai534@gmail.com">Say hi ✦ jxcai534@gmail.com</a>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="project-modal-overlay" id="projectModalOverlay" aria-hidden="true">
+        <div class="project-modal" role="dialog" aria-modal="true">
+            <button class="project-modal-close" id="projectModalClose" type="button" aria-label="Close project details">&times;</button>
+            <div class="project-modal-scroll" id="projectModalScroll">
+
+                <!-- Case Study: Linear Potentiometer Shock Mounts -->
+                <section id="linear-potentiometer-mounts" class="project-row case-study project-detail">
+                    <div class="project-image">
+                        <div class="project-gallery">
+                            <figure>
+                                <img src="assets/shockpot.png" alt="Linear Potentiometer Mounts">
+                                <figcaption>Mounts on the suspension assembly</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/inspo.png" alt="Inspiration">
+                                <figcaption>Inspiration picture</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/sketch.png" alt="Preliminary sketches">
+                                <figcaption>Preliminary sketches</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/back bottom.png" alt="Final back bottom design">
+                                <figcaption>Final back bottom design</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/front bottom.png" alt="Final front bottom design">
+                                <figcaption>Final front bottom design</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/top.png" alt="Final top mount design">
+                                <figcaption>Final top mount design</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/phystabs.jpeg" alt="Final waterjetted tabs">
+                                <figcaption>Final Waterjetted Tabs</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">Linear Potentiometer Shock Mounts (UBC Baja SAE)</h2>
+
+                        <h3>Overview</h3>
+                        <p>Designed and manufactured waterjet-cut mounting hardware to integrate linear potentiometers into the Baja SAE suspension system for shock travel data acquisition. Enabled reliable suspension travel measurement under off-road vibration and debris exposure.</p>
+
+                        <h3>Problem</h3>
+                        <p>Our 2025 competition Baja car, Mochi, requires accurate shock travel data for suspension tuning and validation. Off-the-shelf mounting solutions were unsuitable due to tight packaging, suspension geometry, and high vibration. Sensor alignment, durability, and serviceability were critical to prevent sensor damage or noisy data.</p>
+
+                        <h3>Design Constraints</h3>
+                        <ul>
+                            <li>Maintain linear alignment with shock motion throughout suspension travel</li>
+                            <li>Withstand off-road vibration, impacts, and debris</li>
+                            <li>Manufacturable in-house using waterjet cutting and basic shop tools</li>
+                            <li>Integrate cleanly with existing suspension and CAN-based DAQ system</li>
+                        </ul>
+
+                        <h3>My Role</h3>
+                        <ul>
+                            <li>Mechanical design of sensor mounts in SolidWorks</li>
+                            <li>Iterative CAD refinement based on suspension geometry and travel limits</li>
+                            <li>Collaboration with electrical teammates integrating CAN data acquisition with STM32 Cube IDE</li>
+                        </ul>
+
+                        <h3>Solution</h3>
+                        <p>Designed waterjet-cut aluminum mounting brackets tailored to the suspension geometry. Incorporated rigid mounting features to maintain potentiometer alignment during dynamic motion and optimized the design for in-house fabrication, drilling, and tapping.</p>
+
+                        <h3>Manufacturing &amp; Assembly</h3>
+                        <p>Waterjet cut brackets in-house for the bottom tabs. For the top mounts, we used roundstock with drilled and tapped holes which were then welded onto the main shock bolt. Manufactured in house, then installed and aligned potentiometers on the vehicle suspension.</p>
+
+                        <h3>Outcome / Impact</h3>
+                        <p>Successfully enabled collection of shock travel data through CAN for data acquisition. Improved suspension tuning capability and data reliability during testing and provided a durable, serviceable mounting solution for repeated off-road use.</p>
+
+                        <div class="project-tags">Solidworks • STM32 • C • Shop Skills</div>
+                        <p style="margin-top:12px;">
+                            <a href="assets/Linear%20Potentiometer%20Mount%20Design%20Review.pdf" download class="cv-button" rel="noopener" target="_blank">Download Design Review Slides (PDF)</a>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Case Study: Linear Gripper -->
+                <section id="linear-gripper" class="project-row case-study project-detail">
+                    <div class="project-image">
+                        <img src="assets/gripper.png" alt="Linear Gripper">
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">Linear Gripper for Chemistry Automation</h2>
+
+                        <h3>Overview</h3>
+                        <p>Designed a modular linear gripper in SolidWorks for a chemistry automation robot at the PRIME Robotics Lab (under Dr. Chao Liu). Intended to handle laboratory tools such as test tubes and scoopulas with controlled, repeatable motion. CAD model developed for rapid 3D-printed prototyping, with a planned transition to a machined version for long-term use.</p>
+
+                        <h3>Problem</h3>
+                        <p>Automated chemistry experiments require precise handling of small, fragile, and varied lab tools. Off-the-shelf grippers lacked the adaptability and form factor required for test tubes and scoopulas. The research platform required a compact, modular end-effector suitable for iterative experimentation.</p>
+
+                        <h3>Design Goals &amp; Constraints</h3>
+                        <ul>
+                            <li>Accommodate both cylindrical (test tubes) and flat/irregular (scoopulas) geometries</li>
+                            <li>Apply sufficient gripping force without damaging glassware</li>
+                            <li>Support rubberized gripping surfaces for improved friction and compliance</li>
+                            <li>Suitable for rapid prototyping via 3D printing, followed by machining</li>
+                            <li>Maintain a compact and modular geometry compatible with a research robot</li>
+                        </ul>
+
+                        <h3>My Role</h3>
+                        <ul>
+                            <li>Mechanical design and CAD modeling of the linear gripper in SolidWorks</li>
+                            <li>Iterative refinement based on lab requirements and tool geometries</li>
+                            <li>Design for manufacturability across prototyping and final fabrication stages</li>
+                        </ul>
+
+                        <h3>Solution</h3>
+                        <p>Designed a parallel-jaw linear gripper optimized for consistent, repeatable motion. Shaped jaw geometry to support rubber grip pads, improving friction and compliance when handling delicate tools. Structured the design to allow quick iteration during 3D-printed prototyping before transitioning to a machined version.</p>
+
+                        <h3>Prototyping &amp; Manufacturing Plan</h3>
+                        <p>Initial prototype to be fabricated using 3D printing for rapid testing and iteration. Final version to be machined for improved durability, precision, and repeatability. Design allows for jaw replacement or modification to support additional lab tools.</p>
+
+                        <h3>Outcome / Research Impact</h3>
+                        <p>Delivered a functional gripper design ready for prototyping and experimental integration. Enables the chemistry automation platform to manipulate test tubes and scoopulas reliably and contributes a reusable, modular end-effector to ongoing research in robotic manipulation and lab automation.</p>
+
+                        <div class="project-tags">Solidworks • Research</div>
+                    </div>
+                </section>
+
+                <!-- Case Study: melokey (Accessible MIDI Keyboard System) -->
+                <section id="melokey" class="project-row case-study project-detail">
+                    <div class="project-image">
+                        <div class="project-gallery">
+                            <figure>
+                                <img src="assets/melokey.png" alt="Final enclosure design">
+                                <figcaption>Final enclosure design</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/schematic.png" alt="Melokey schematic">
+                                <figcaption>Schematic</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/final pcb.png" alt="Final PCB design">
+                                <figcaption>Final PCB design</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/3d model pcb.png" alt="3D model of PCB">
+                                <figcaption>3D model of PCB</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/app homepage.png" alt="App — homepage design">
+                                <figcaption>App — homepage design</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/additional pages.png" alt="App — additional pages">
+                                <figcaption>App — additional pages</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">melokey — Accessible MIDI Keyboard System</h2>
+
+                        <h3>Overview</h3>
+                        <p>Designed an accessible MIDI keyboard system aimed at teens (up to age 16), focusing on clarity, customization, and ease of use. Integrated mechanical enclosure design, custom PCB design, and early-stage software development — the first end-to-end project combining CAD, electronics, and app design into a single system.</p>
+
+                        <h3>Problem</h3>
+                        <p>Many entry-level MIDI controllers are not designed with accessibility or sensory sensitivity in mind. Young users and neurodivergent learners often benefit from simplified interfaces and customizable interaction. Creating an accessible learning tool requires coordination between physical hardware and software.</p>
+
+                        <h3>Design Goals &amp; Constraints</h3>
+                        <ul>
+                            <li>Create a physically approachable keyboard suitable for teens and beginner musicians</li>
+                            <li>Design a robust enclosure that protects electronics while remaining accessible and intuitive</li>
+                            <li>Develop a custom PCB to support MIDI input and key sensing</li>
+                            <li>Design a companion app that enhances learning without overwhelming users</li>
+                            <li>Learn and integrate CAD, PCB design, and software development within one project</li>
+                        </ul>
+
+                        <h3>My Role</h3>
+                        <ul>
+                            <li>Designed the full keyboard enclosure in Fusion 360, including internal layout and assembly considerations</li>
+                            <li>Designed a custom PCB in KiCad centered around a Raspberry Pi Pico</li>
+                            <li>Developed the interaction and UI framework for a companion app in Figma and began implementing the app in Swift</li>
+                        </ul>
+
+                        <h3>Mechanical Design</h3>
+                        <p>Modeled a compact enclosure to house the PCB, keys, wiring, and Raspberry Pi Pico. Designed for easy assembly and iteration as electronics and firmware evolve, balancing durability, accessibility, and visual clarity.</p>
+
+                        <h3>Electrical Design</h3>
+                        <p>Designed a custom PCB in KiCad integrating a Raspberry Pi Pico for MIDI functionality. Iterated PCB layout in parallel with enclosure design to ensure fit and cable routing, focusing on clean power distribution, input reliability, and future expandability.</p>
+
+                        <h3>Software &amp; Interface Design</h3>
+                        <p>Designed the companion app's interaction flow and UI in Figma with simple, readable layouts and customizable controls; began translating the design into a Swift-based iOS app with accessibility-aware features.</p>
+
+                        <h3>Prototyping &amp; Current Status</h3>
+                        <p>Enclosure CAD completed and ready for fabrication. PCB design completed and prepared for prototyping. App design finalized in Figma; early Swift development underway. Project remains in active iteration as a work-in-progress.</p>
+
+                        <h3>Outcome / Impact</h3>
+                        <p>Established a functional, system-level prototype design spanning hardware and software. Developed hands-on experience integrating mechanical, electrical, and UI design, creating a foundation for an accessible music-learning tool for teens.</p>
+
+                        <h3>Key Learnings</h3>
+                        <p>Hardware, enclosure, and software must be designed together to avoid costly rework. Early prototyping and iteration are essential when designing for real users. Accessibility considerations influence mechanical layout as much as software UI.</p>
+
+                        <h3>Next Steps</h3>
+                        <ul>
+                            <li>Fabricate enclosure and assemble first hardware prototype</li>
+                            <li>Test key sensing and MIDI output</li>
+                            <li>Continue Swift app development and integrate with hardware</li>
+                            <li>Collect feedback from teen users to guide iteration</li>
+                        </ul>
+
+                        <div class="project-tags">KiCad • Fusion360 • Swift</div>
+                        <a href="https://github.com/lejoannac/melokey" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
+                    </div>
+                </section>
+
+                <!-- Case Study: Blipyboard — Custom Macro Pad for Workflow Automation -->
+                <section id="blipyboard" class="project-row case-study project-detail">
+                    <div class="project-image">
+                        <div class="project-gallery">
+                            <figure>
+                                <img src="assets/blipyboard.png" alt="Final enclosure with PCB">
+                                <figcaption>Final enclosure with PCB</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/blipschematic.png" alt="Schematic">
+                                <figcaption>Schematic</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/blippcb.png" alt="PCB design">
+                                <figcaption>PCB design</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">blipyboard — Custom Macro Pad for Workflow Automation</h2>
+
+                        <h3>Overview</h3>
+                        <p>Designed and built a custom 8-key macro pad to automate and streamline productivity workflows. Integrated mechanical design, custom PCB, RGB lighting, OLED feedback, and firmware into a compact device. Designed for 3D printing and rapid iteration, with an emphasis on customization and usability.</p>
+
+                        <h3>Problem</h3>
+                        <p>Many workflows rely on repetitive keyboard shortcuts and application-specific commands. Off-the-shelf macro pads often lack flexibility, visual feedback, or compact form factors. The goal was to design a programmable input device tailored to individual workflows and preferences.</p>
+
+                        <h3>Design Goals &amp; Constraints</h3>
+                        <ul>
+                            <li>Provide 8 programmable keys using reliable, tactile switches</li>
+                            <li>Include a rotary encoder for intuitive analog-style control (volume, scrolling, zoom)</li>
+                            <li>Add visual feedback via an OLED display</li>
+                            <li>Integrate addressable RGB lighting for status indication and customization</li>
+                            <li>Be compact, affordable, and suitable for 3D printing</li>
+                            <li>Support full firmware customization</li>
+                        </ul>
+
+                        <h3>My Role</h3>
+                        <ul>
+                            <li>Designed the PCB in KiCad, integrating input, display, lighting, and control components</li>
+                            <li>Designed a 3D-printable enclosure in Fusion 360</li>
+                            <li>Developed and customized firmware using KMK and managed hardware–firmware integration</li>
+                        </ul>
+
+                        <h3>Mechanical Design</h3>
+                        <p>Designed a compact enclosure optimized for 3D printing, selected Cherry MX mechanical switches for durability and tactile feedback, and optimized layout for key spacing, encoder access, and OLED visibility.</p>
+
+                        <h3>Electrical Design</h3>
+                        <p>Designed a custom PCB around a Seeed XIAO RP2040 microcontroller. Integrated 8 Cherry MX switches, a rotary encoder, 8 SK6812 LEDs, and an OLED display, routing the board with assembly and signal integrity in mind.</p>
+
+                        <h3>Firmware &amp; Software</h3>
+                        <p>Implemented custom KMK firmware to support key mapping, encoder behavior, lighting effects, and display output. Programmed macros to automate common productivity tasks and enabled firmware-level customization for different workflows.</p>
+
+                        <h3>Prototyping &amp; Fabrication</h3>
+                        <p>PCB fabricated and assembled. Enclosure 3D-printed for rapid iteration. Firmware flashed, tested, and refined on physical hardware.</p>
+
+                        <h3>Outcome / Impact</h3>
+                        <p>Delivered a fully functional, customizable macro pad that improved efficiency by reducing repetitive keyboard actions and provided hands-on experience integrating embedded firmware with custom hardware.</p>
+
+                        <h3>Key Learnings</h3>
+                        <p>Input device usability depends heavily on switch choice and encoder placement. Firmware design directly shapes the user experience. Tight iteration between PCB layout, enclosure design, and firmware accelerates development.</p>
+
+                        <div class="project-tags">KiCad • Fusion360 • KMK</div>
+                        <a href="https://github.com/lejoannac/blipyboard" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
+                    </div>
+                </section>
+
+                <!-- Project: Personal Portfolio Website (short entry) -->
+                <section id="personal-portfolio" class="project-row project-detail">
+                    <div class="project-image">
+                        <img src="assets/web.png" alt="Personal Portfolio Website">
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">Personal Portfolio Website</h2>
+                        <p class="project-description">A concise site to showcase my projects and share a little bit about me.</p>
+                        <div class="project-tags">HTML • CSS • Javascript • Github Copilot</div>
+                        <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
+                            <a href="https://github.com/lejoannac/portfolio" target="_blank" rel="noopener" class="project-github-link">View on GitHub</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project: The Roley — Accessible Toothpaste Dispenser -->
+                <section id="the-roley" class="project-row project-detail">
+                    <div class="project-image">
+                        <img src="assets/roley.png" alt="The Roley">
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">The Roley — Accessible Toothpaste Dispenser</h2>
+                        <p class="project-description">Designed a CAD model of an accessible toothpaste dispenser for users with limited finger and wrist mobility. Focused on one-handed operation and reduced grip strength requirements using a rolling/levered mechanism.</p>
+                        <div class="project-tags">Solidworks • FEA</div>
+                        <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
+                            <a href="assets/Promo%20Pitch%20Sheet%20K7%20-%20THE%20ROLEY%20(1).pdf" download class="cv-button" rel="noopener" target="_blank">Download Promo Pitch Sheet (PDF)</a>
+                            <a href="assets/APSC%20100%20MOD%203%20K7%20Tech%20Memo.pdf" download class="cv-button" rel="noopener" target="_blank">Download Technical Memo (PDF)</a>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </div>
-    </section>
-
-    <!-- New Light Blue Section -->
-    <section class="lightblue-section">
-        <h2>Let's Connect!</h2>
-        <div class="main-buttons">
-            <a class="contact-button" href="contact.html">
-                Get in Touch
-            </a>
-        </div>
-        <div class="icon-row">
-            <a href="https://www.linkedin.com/in/joanna-cai-45b383249/" target="_blank" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="linkedin-icon">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-            </a>
-            <a href="mailto:jxcai534@email.com" target="_blank" aria-label="Email" class="email-footer-link">
-                <img src="assets/email.svg" alt="Email" class="email-icon" />
-            </a>
-            <a href="https://github.com/lejoannac" target="_blank" aria-label="GitHub" class="github-footer-link">
-                <img src="assets/github.svg" alt="GitHub" class="button-icon" />
-            </a>
-        </div>
-    </section>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
