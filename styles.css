@@ -1840,6 +1840,8 @@ body.portfolio-home .page {
     background: #F3EAD9;
     min-height: 100vh;
     box-shadow: 0 0 60px rgba(70, 50, 20, .08);
+    display: flex;
+    flex-direction: column;
 }
 body.portfolio-home .nav {
     position: sticky;
@@ -1863,7 +1865,8 @@ body.portfolio-home .navl { display: flex; gap: 26px; font-size: 13px; letter-sp
 body.portfolio-home .navl a { color: inherit; text-decoration: none; padding-bottom: 2px; border-bottom: 1.5px solid transparent; transition: border-color .2s, color .2s; }
 body.portfolio-home .navl a:hover { color: #546092; border-color: #546092; }
 
-body.portfolio-home .cgrid { display: grid; grid-template-columns: 312px 1fr; align-items: start; }
+body.portfolio-home .cgrid { display: grid; grid-template-columns: 312px 1fr; align-items: start; flex: 1; }
+body.portfolio-home .maincol { display: flex; flex-direction: column; align-self: stretch; }
 body.portfolio-home .crail { position: sticky; top: 74px; align-self: start; padding: 48px 40px; border-right: 1px solid #E2D4BB; background: #EEE3CF; }
 body.portfolio-home .hugeName { font-family: 'Newsreader', Georgia, serif; font-size: 54px; line-height: .98; font-weight: 500; letter-spacing: -.01em; }
 body.portfolio-home .kicker { font: 12px 'Space Mono', monospace; letter-spacing: .12em; color: #546092; margin-top: 12px; }
@@ -1923,7 +1926,7 @@ body.portfolio-home .bob { animation: bob 6s ease-in-out infinite; }
 body.portfolio-home .bob2 { animation: bob 7s ease-in-out infinite; }
 @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
 
-body.portfolio-home .foot { margin-top: 46px; padding: 54px 44px; background: #546092; color: #EEF1FF; }
+body.portfolio-home .foot { margin-top: auto; padding: 54px 44px; background: #546092; color: #EEF1FF; }
 body.portfolio-home .footbig { font-family: 'Newsreader', Georgia, serif; font-size: 46px; font-weight: 500; line-height: 1.05; }
 body.portfolio-home .cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 13px 22px; border-radius: 999px; background: #fff; color: #2B2722; font-weight: 600; font-size: 15px; text-decoration: none; transition: transform .2s; }
 body.portfolio-home .cta:hover { transform: translateY(-2px); }
