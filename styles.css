@@ -1866,8 +1866,8 @@ body.portfolio-home .navl a { color: inherit; text-decoration: none; padding-bot
 body.portfolio-home .navl a:hover { color: #546092; border-color: #546092; }
 
 body.portfolio-home .cgrid { display: grid; grid-template-columns: 312px 1fr; align-items: start; flex: 1; }
-body.portfolio-home .maincol { display: flex; flex-direction: column; align-self: stretch; }
-body.portfolio-home .crail { position: sticky; top: 74px; align-self: start; padding: 48px 40px; border-right: 1px solid #E2D4BB; background: #EEE3CF; }
+body.portfolio-home .maincol { display: flex; flex-direction: column; align-self: stretch; min-width: 0; }
+body.portfolio-home .crail { position: sticky; top: 74px; align-self: start; min-width: 0; padding: 48px 40px; border-right: 1px solid #E2D4BB; background: #EEE3CF; }
 body.portfolio-home .hugeName { font-family: 'Newsreader', Georgia, serif; font-size: 54px; line-height: .98; font-weight: 500; letter-spacing: -.01em; }
 body.portfolio-home .kicker { font: 12px 'Space Mono', monospace; letter-spacing: .12em; color: #546092; margin-top: 12px; }
 body.portfolio-home .railphoto { width: 100%; height: 172px; object-fit: cover; border-radius: 10px; margin-top: 20px; box-shadow: 0 6px 16px rgba(60, 45, 20, .16); }
@@ -1939,6 +1939,21 @@ body.portfolio-home .footrow a { color: inherit; text-decoration: none; }
     body.portfolio-home .navl { display: none; }
     body.portfolio-home .ccgrid { grid-template-columns: repeat(2, 1fr); }
     body.portfolio-home .itags { min-width: 0; }
+}
+
+@media (max-width: 600px) {
+    body.portfolio-home .nav { padding: 16px 20px; }
+    body.portfolio-home .crail { padding: 32px 20px; }
+    body.portfolio-home .section { padding: 28px 20px 8px; }
+    body.portfolio-home .creative { margin: 24px 20px 0; padding: 28px 22px 32px; }
+    body.portfolio-home .foot { padding: 40px 24px; }
+    body.portfolio-home .irow { gap: 12px; padding: 14px 6px; }
+    body.portfolio-home .ithumb { width: 56px; height: 40px; }
+    body.portfolio-home .itags { display: none; }
+    body.portfolio-home .hugeName { font-size: 40px; }
+    body.portfolio-home .cchead { font-size: 30px; }
+    body.portfolio-home .footbig { font-size: 32px; }
+    body.portfolio-home .ccgrid { grid-template-columns: 1fr; }
 }
 
 /* Case-study modal (project tabs) recolored to match the warm palette;
