@@ -377,6 +377,22 @@ body.dark-mode .mobile-menu-item:hover {
     object-fit: cover;
     display: block;
 }
+.project-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #5d6b7e;
+    background: repeating-linear-gradient(135deg, #edf2f7 0, #edf2f7 10px, #e4eaf1 10px, #e4eaf1 20px);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+.project-placeholder-large {
+    width: 100%;
+    min-height: 420px;
+}
 .project-card-body {
     padding: 22px;
     display: flex;

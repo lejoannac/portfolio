@@ -46,7 +46,7 @@
                 <div class="section" id="work">
                     <div class="sechead">
                         <div class="h2">Selected Work</div>
-                        <div class="count">06 projects</div>
+                        <div class="count">09 projects</div>
                     </div>
 
                     <button class="irow" type="button" data-project="linear-potentiometer-mounts">
@@ -66,6 +66,36 @@
                             <div class="iblurb">An accessible USB-MIDI keyboard — custom PCB, enclosure &amp; iOS app — built to support neurodivergent learners.</div>
                         </div>
                         <div class="itags">KiCad · Fusion 360 · Swift</div>
+                        <div class="arrow">↗</div>
+                    </button>
+
+                    <button class="irow" type="button" data-project="autonomous-claw">
+                        <div class="ithumb project-placeholder" aria-label="Autonomous Claw image placeholder">IMAGE<br>COMING SOON</div>
+                        <div class="f1">
+                            <div class="ititle">Autonomous Claw</div>
+                            <div class="iblurb">An Arduino-controlled claw that used ultrasonic sensing to time pickup and release across competitive object-handling rounds.</div>
+                        </div>
+                        <div class="itags">Arduino · Ultrasonic Sensor · Sheet Metal</div>
+                        <div class="arrow">↗</div>
+                    </button>
+
+                    <button class="irow" type="button" data-project="accessible-guitar-strummer">
+                        <div class="ithumb project-placeholder" aria-label="Guitar Strummer image placeholder">IMAGE<br>COMING SOON</div>
+                        <div class="f1">
+                            <div class="ititle">Accessible Guitar Strummer</div>
+                            <div class="iblurb">A Bluetooth MIDI strumming controller with IMU motion sensing and a 3D-printed enclosure for disabled artists.</div>
+                        </div>
+                        <div class="itags">ESP32 · C++ · Bluetooth MIDI</div>
+                        <div class="arrow">↗</div>
+                    </button>
+
+                    <button class="irow" type="button" data-project="accessible-easel">
+                        <div class="ithumb project-placeholder" aria-label="Accessible Easel image placeholder">IMAGE<br>COMING SOON</div>
+                        <div class="f1">
+                            <div class="ititle">Accessible Rotating Easel</div>
+                            <div class="iblurb">An adjustable, rotating desktop easel with a C-clamp attachment for canvases and embroidery hoops.</div>
+                        </div>
+                        <div class="itags">SolidWorks · 3D Printing · Accessibility</div>
                         <div class="arrow">↗</div>
                     </button>
 
@@ -441,6 +471,63 @@
                             <a href="assets/Promo%20Pitch%20Sheet%20K7%20-%20THE%20ROLEY%20(1).pdf" download class="cv-button" rel="noopener" target="_blank">Download Promo Pitch Sheet (PDF)</a>
                             <a href="assets/APSC%20100%20MOD%203%20K7%20Tech%20Memo.pdf" download class="cv-button" rel="noopener" target="_blank">Download Technical Memo (PDF)</a>
                         </div>
+                    </div>
+                </section>
+
+                <!-- Case Study: Autonomous Claw -->
+                <section id="autonomous-claw" class="project-row case-study project-detail">
+                    <div class="project-image"><div class="project-placeholder project-placeholder-large">IMAGE<br>COMING SOON</div></div>
+                    <div class="project-content">
+                        <h2 class="project-title">Autonomous Claw (APSC 101)</h2>
+                        <h3>Overview</h3>
+                        <p>Built an autonomous claw for an APSC 101 design challenge. The system used an Arduino, sheet-metal structure, and an ultrasonic sensor to detect objects and time when the claw should open and close.</p>
+                        <h3>Challenge</h3>
+                        <p>The claw had to perform across three rounds: handling different objects, collecting as many objects as possible, and competing in a team round against other teams' claws.</p>
+                        <h3>My Role</h3>
+                        <ul><li>Integrated the Arduino control system with ultrasonic distance sensing</li><li>Developed timing logic for autonomous claw opening and closing</li><li>Contributed to the sheet-metal mechanism and iterative physical testing</li></ul>
+                        <h3>Solution</h3>
+                        <p>Combined distance-based detection with timed actuation so the claw could respond consistently without manual input. Iteration focused on making the mechanism reliable across changing object sizes and the constraints of each competition round.</p>
+                        <h3>Outcome / Impact</h3>
+                        <p>Delivered a working autonomous claw and gained hands-on experience translating sensor input into mechanical action under time pressure and changing field conditions.</p>
+                        <div class="project-tags">Arduino • Ultrasonic Sensor • Sheet Metal</div>
+                    </div>
+                </section>
+
+                <!-- Case Study: Accessible Guitar Strummer -->
+                <section id="accessible-guitar-strummer" class="project-row case-study project-detail">
+                    <div class="project-image"><div class="project-placeholder project-placeholder-large">IMAGE<br>COMING SOON</div></div>
+                    <div class="project-content">
+                        <h2 class="project-title">Accessible Guitar Strummer</h2>
+                        <h3>Overview</h3>
+                        <p>Developed a functional MIDI guitar strumming device at the National AccessArts Centre for disabled artists. The controller translates physical motion into musical input through an ESP32, IMU-based sensing, and Bluetooth MIDI.</p>
+                        <h3>Problem</h3>
+                        <p>Traditional guitar technique can be difficult for artists with limited hand mobility. The project explored a more flexible interaction that lets a performer create strumming input through accessible movement.</p>
+                        <h3>My Role</h3>
+                        <ul><li>Integrated the ESP32, IMU sensor, and Bluetooth MIDI communication</li><li>Developed embedded C++ for motion sensing and controller behavior</li><li>Designed a custom 3D-printed enclosure in SolidWorks for the electronics and user controls</li></ul>
+                        <h3>Solution</h3>
+                        <p>Built a self-contained motion-controlled MIDI instrument that senses the user's movement and sends wireless musical data. The enclosure was shaped around the electronics and interaction requirements so the device could be tested and refined as a complete product.</p>
+                        <h3>Outcome / Impact</h3>
+                        <p>Created a fully functional Bluetooth MIDI controller that supports more accessible musical expression and demonstrates an end-to-end workflow from embedded code to mechanical prototype.</p>
+                        <div class="project-tags">ESP32 • C++ • Bluetooth MIDI • SolidWorks • 3D Printing</div>
+                    </div>
+                </section>
+
+                <!-- Case Study: Accessible Rotating Easel -->
+                <section id="accessible-easel" class="project-row case-study project-detail">
+                    <div class="project-image"><div class="project-placeholder project-placeholder-large">IMAGE<br>COMING SOON</div></div>
+                    <div class="project-content">
+                        <h2 class="project-title">Accessible Rotating Easel</h2>
+                        <h3>Overview</h3>
+                        <p>Designed an adjustable and rotating desktop easel at the National AccessArts Centre to help artists with limited reach access different areas of their canvas more easily.</p>
+                        <h3>Problem</h3>
+                        <p>Reaching across a fixed canvas can be physically demanding and may limit how an artist works. The easel needed to bring the active area closer while remaining stable on a table and flexible across different art practices.</p>
+                        <h3>Design Requirements</h3>
+                        <ul><li>Rotate the work surface to bring different canvas areas within reach</li><li>Adjust to different working positions and canvas sizes</li><li>Attach securely to a tabletop using a C-clamp</li><li>Support both canvases and embroidery hoops</li></ul>
+                        <h3>My Role</h3>
+                        <ul><li>Designed the mechanical interface and adjustable desktop assembly</li><li>Developed and iterated the prototype with rapid prototyping methods</li><li>Considered stability, reach, rotation, and compatibility with multiple art formats</li></ul>
+                        <h3>Outcome / Impact</h3>
+                        <p>Produced an adaptable easel concept that makes a larger working area more approachable for artists with limited reach while accommodating both painting and embroidery workflows.</p>
+                        <div class="project-tags">SolidWorks • 3D Printing • Accessibility</div>
                     </div>
                 </section>
 
