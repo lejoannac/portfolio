@@ -1892,7 +1892,7 @@ body.portfolio-home .maincol { display: flex; flex-direction: column; align-self
 body.portfolio-home .crail { position: sticky; top: 74px; align-self: start; min-width: 0; padding: 48px 40px; border-right: 1px solid #E2D4BB; background: #EEE3CF; }
 body.portfolio-home .hugeName { font-family: 'Newsreader', Georgia, serif; font-size: 54px; line-height: .98; font-weight: 500; letter-spacing: -.01em; }
 body.portfolio-home .kicker { font: 12px 'Space Mono', monospace; letter-spacing: .12em; color: #546092; margin-top: 12px; }
-body.portfolio-home .railphoto { width: 100%; height: 172px; object-fit: cover; border-radius: 10px; margin-top: 20px; box-shadow: 0 6px 16px rgba(60, 45, 20, .16); }
+body.portfolio-home .railphoto { width: 100%; height: 172px; object-fit: cover; object-position: center 45%; border-radius: 10px; margin-top: 20px; box-shadow: 0 6px 16px rgba(60, 45, 20, .16); }
 body.portfolio-home .cabout { font-size: 14.5px; line-height: 1.62; color: #574E40; margin-top: 20px; }
 body.portfolio-home .nowline { display: flex; align-items: center; gap: 9px; font-size: 13.5px; color: #3a342b; margin-top: 24px; }
 body.portfolio-home .dot { width: 9px; height: 9px; border-radius: 50%; background: #46c98a; box-shadow: 0 0 0 4px rgba(70, 201, 138, .25); flex: none; }
