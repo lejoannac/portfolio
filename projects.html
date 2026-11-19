@@ -75,7 +75,7 @@
                 </button>
 
                 <button class="project-tile" type="button" data-project="accessible-guitar-strummer" aria-haspopup="dialog" aria-controls="accessible-guitar-strummer">
-                    <span class="project-tile-image project-placeholder">IMAGE<br>COMING SOON</span>
+                    <span class="project-tile-image"><img src="assets/strummerinside.jpg" alt="Inside of the accessible guitar strummer" loading="lazy"></span>
                     <span class="project-tile-body">
                         <span class="project-tile-title">Accessible Guitar Strummer</span>
                         <span class="project-tile-blurb">A Bluetooth MIDI strumming controller using an ESP32 and IMU sensing for disabled artists.</span>
@@ -84,7 +84,7 @@
                 </button>
 
                 <button class="project-tile" type="button" data-project="accessible-easel" aria-haspopup="dialog" aria-controls="accessible-easel">
-                    <span class="project-tile-image project-placeholder">IMAGE<br>COMING SOON</span>
+                    <span class="project-tile-image"><img src="assets/static%20easel.PNG" alt="Static CAD view of the rotating easel" loading="lazy"></span>
                     <span class="project-tile-body">
                         <span class="project-tile-title">Accessible Rotating Easel</span>
                         <span class="project-tile-blurb">An adjustable, rotating desktop easel with a C-clamp for canvases and embroidery hoops.</span>
@@ -450,7 +450,21 @@
 
                 <!-- Case Study: Accessible Guitar Strummer -->
                 <section id="accessible-guitar-strummer" class="project-row case-study project-detail">
-                    <div class="project-image"><div class="project-placeholder project-placeholder-large">IMAGE<br>COMING SOON</div></div>
+                    <div class="project-image">
+                        <div class="project-gallery">
+                            <figure>
+                                <img src="assets/strummerinside.jpg" alt="Inside of the accessible guitar strummer">
+                                <figcaption>Guitar strummer internals</figcaption>
+                            </figure>
+                            <figure>
+                                <video controls preload="metadata" playsinline aria-label="Live Usage of the Guitar Strummer">
+                                    <source src="assets/strummerlive.MOV">
+                                    Your browser does not support embedded video.
+                                </video>
+                                <figcaption>Live Usage of the Guitar Strummer</figcaption>
+                            </figure>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h2 class="project-title">Accessible Guitar Strummer</h2>
                         <h3>Overview</h3>
@@ -469,7 +483,21 @@
 
                 <!-- Case Study: Accessible Rotating Easel -->
                 <section id="accessible-easel" class="project-row case-study project-detail">
-                    <div class="project-image"><div class="project-placeholder project-placeholder-large">IMAGE<br>COMING SOON</div></div>
+                    <div class="project-image">
+                        <div class="project-gallery">
+                            <figure>
+                                <img src="assets/static%20easel.PNG" alt="Static CAD view of the rotating easel">
+                                <figcaption>Rotating easel CAD</figcaption>
+                            </figure>
+                            <figure>
+                                <video controls preload="metadata" playsinline aria-label="CAD Demo of Rotating Easel">
+                                    <source src="assets/rotating%20easel.mov">
+                                    Your browser does not support embedded video.
+                                </video>
+                                <figcaption>CAD Demo of Rotating Easel</figcaption>
+                            </figure>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h2 class="project-title">Accessible Rotating Easel</h2>
                         <h3>Overview</h3>

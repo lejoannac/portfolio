@@ -1591,6 +1591,12 @@ body.dark-mode .project-github-link:hover {
     height: auto;
     max-height: 140px; /* cap most images so they don't dominate layout */
 }
+.project-row.case-study .project-gallery video {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+}
 /* Make the first photo a bit larger but still bounded */
 .project-row.case-study .project-gallery figure:first-child img {
     max-height: 220px;
@@ -2077,4 +2083,3 @@ body.portfolio-about .cta:hover { transform: translateY(-2px); }
     body.portfolio-about .hi { font-size: 44px; }
     body.portfolio-about .lists { grid-template-columns: 1fr; gap: 8px; }
 }
-
